@@ -1,22 +1,14 @@
 #Greenfoot project file
 class.Elmos_World.image=bananas.png
-<<<<<<< HEAD
+class.Sarah_world.image=space1.jpg
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
 editor.fx.0.y=0
-height=700
-=======
-class.Sarah_world.image=space1.jpg
-editor.fx.0.height=739
-editor.fx.0.width=816
-editor.fx.0.x=275
-editor.fx.0.y=-4
-height=608
->>>>>>> ef313e14c05cfed426f8911c0817fd21e987940a
+height=744
 package.numDependencies=0
 package.numTargets=6
-project.charset=windows-1252
+project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
 publish.longDesc=
@@ -73,7 +65,7 @@ target6.width=80
 target6.x=0
 target6.y=0
 version=3.0.0
-width=1034
-world.lastInstantiated=MyWorld
-xPosition=336
-yPosition=56
+width=1382
+world.lastInstantiated=Sarah_world
+xPosition=0
+yPosition=0
