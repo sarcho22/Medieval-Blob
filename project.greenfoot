@@ -1,7 +1,6 @@
 #Greenfoot project file
-<<<<<<< HEAD
 class.Blob.image=baby1.png
-class.Elmos_World.image=floor.jpg
+class.Elmos_World.image=bananas.png
 class.Sarah_world.image=space1.jpg
 class.therock.image=images.jpg
 dependency1.from=Elmos_World
@@ -14,27 +13,6 @@ editor.fx.0.height=737
 editor.fx.0.width=814
 editor.fx.0.x=360
 editor.fx.0.y=28
-=======
-class.Elmos_World.image=bananas.png
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> cbd94ac289625ec6b1d2d24d51400e3e91c09687
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
-<<<<<<< HEAD
-=======
-height=700
-=======
-class.Sarah_world.image=space1.jpg
-editor.fx.0.height=739
-editor.fx.0.width=816
-editor.fx.0.x=275
-editor.fx.0.y=-4
->>>>>>> cbd94ac289625ec6b1d2d24d51400e3e91c09687
->>>>>>> c22ad37e105beef078cb0bb11ec050ed34b50208
 height=608
 package.numDependencies=2
 package.numTargets=8
