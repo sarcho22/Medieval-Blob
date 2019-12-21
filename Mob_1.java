@@ -13,8 +13,8 @@ public class Mob_1 extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    private int dx = (int)(Math.random()*7)+1;
-    private int dy = (int)(Math.random()*7)+1;
+    private int dx = (int)(Math.random()*3)+1;
+    private int dy = (int)(Math.random()*3)+1;
     public void act() 
     {
         // I made him bounce around the screen for now, but eventually we should set it up so that once a person
