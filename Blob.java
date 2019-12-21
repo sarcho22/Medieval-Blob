@@ -15,10 +15,10 @@ public class Blob extends Actor
     public void act() 
     {
         // Add your action code here.
-        movie();
+        move();
     }    
     
-    public void movie() {
+    public void move() {
         if (Greenfoot.isKeyDown("right") && getX() < ((Elmos_World)getWorld()).getWidth() - (getImage().getWidth() / 2)) {
             setLocation(getX()+3, getY());
         }
