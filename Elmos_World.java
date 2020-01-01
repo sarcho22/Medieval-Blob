@@ -8,16 +8,59 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Elmos_World extends World
 {
-
-    /**
-     * Constructor for objects of class Elmos_World.
-     * 
-     */
+    public static Inventory i1 = new Inventory();
+    public static Inventory i2 = new Inventory();
+    public static Inventory i3 = new Inventory();
+    private Blob me = new Blob();
+    private boolean e_pressed = false;
+    private int countDown = 5;
+    
     public Elmos_World()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
-        Blob me = new Blob();
+        super(750, 500, 1);
         addObject(me, me.getImage().getWidth()/2, getHeight()/2);
     }
+    public void act() {
+        
+        if(e_pressed) {
+            showInventory(me.getX(), me.getY());
+        }
+        else{
+            hideInventory();
+        }
+        if(countDown <= 0) {
+            action();
+            countDown = 50;
+            // right now we need to hold e to open it cuz we need a count down
+            // count down needed or 'e' is pressed for too long
+            // doesn't register that we aren't pressing e anymore
+            // fix later
+        }
+        countDown--;
+    }
+    
+    public void action() {
+        if(Greenfoot.isKeyDown("e")) {
+            if(e_pressed) {
+                e_pressed = false;
+            }
+            else{
+                e_pressed = true;
+            }
+        }
+    }
+    
+    public void showInventory(int x, int y) {
+        addObject(i1, x+30, y-(2*i1.getImage().getHeight()));
+        addObject(i2, x+30, y-(i1.getImage().getHeight()));
+        addObject(i3, x+30, y);
+    }
+    
+    public void hideInventory() {
+        removeObject(i1);
+        removeObject(i2);
+        removeObject(i3);
+    }
+    
 }
