@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Blob extends Actor
 {
     private int health = 100;
+    private int countDown = 10;
     /**
      * Act - do whatever the kingBlob wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,34 +19,48 @@ public class Blob extends Actor
         // Add your action code here.
         move();
         checkMobs();
+        countDown--;
+        action();
     }    
     
     public void action() {
         if(Greenfoot.isKeyDown("f")) {
-            attack();
+            if(Elmos_World.i1.isSword) {
+                attack();
+            }
+            if(Elmos_World.i1.isPickaxe) {
+                mine();
+            }
+            if(Elmos_World.i1.isKey) {
+                unlock();
+            }
         }
     }
     
     public void move() {
-        if (Greenfoot.isKeyDown("right") && getX() < ((Elmos_World)getWorld()).getWidth() - (getImage().getWidth() / 2)) {
+        if (Greenfoot.isKeyDown("d") && getX() < ((Elmos_World)getWorld()).getWidth() - (getImage().getWidth() / 2)) {
             setLocation(getX()+3, getY());
         }
-        if (Greenfoot.isKeyDown("left") && getX() > (getImage().getWidth()) / 2) {
+        if (Greenfoot.isKeyDown("a") && getX() > (getImage().getWidth()) / 2) {
             setLocation(getX()-3, getY());
         }
-        if (Greenfoot.isKeyDown("up") && getY() > (getImage().getHeight()) / 2) {
+        if (Greenfoot.isKeyDown("w") && getY() > (getImage().getHeight()) / 2) {
             setLocation(getX(), getY()-3);
         }
-        if (Greenfoot.isKeyDown("down") && getY() < ((Elmos_World)getWorld()).getHeight() - (getImage().getHeight() / 2)) {
+        if (Greenfoot.isKeyDown("s") && getY() < ((Elmos_World)getWorld()).getHeight() - (getImage().getHeight() / 2)) {
             setLocation(getX(), getY()+3);
         }
     }
     
     public void checkMobs() {
-        if(isTouching(Mob_1.class)) {
-            health -= 5;
-            checkHealth();
+        if(countDown <= 0) {
+            if(isTouching(Mob_1.class)) {
+                health -= 5;
+                checkHealth();
+                countDown = 10;
+            }   
         }
+        
     }
     
     public void checkHealth() {
@@ -55,7 +70,13 @@ public class Blob extends Actor
     }
     
     public void attack() {
-        if(Elmos_World.i1.isSword) {
-        }
+        
+    }
+    
+    public void mine() {
+    }
+    
+    public void unlock() {
+        // also check if u touching door
     }
 }

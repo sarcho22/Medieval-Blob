@@ -14,6 +14,8 @@ public class Inventory extends Actor
      */
     public boolean isPickaxe;
     public boolean isSword;
+    public boolean isKey;
+    public boolean isEmpty;
     
     public void act() 
     {
@@ -24,16 +26,34 @@ public class Inventory extends Actor
         if(isTouching(Sword.class)) {
             turnOff("sword");
         }
+        if(isTouching(Key.class)) {
+            turnOff("key");
+        }
+        //displayImage();
     }
     
     public void turnOff(String current) {
         if(current == "sword") {
             isSword = true;
             isPickaxe = false;
+            isKey = false;
+            isEmpty = false;
         }
         if(current == "pickaxe") {
             isSword = false;
             isPickaxe = true;
+            isKey = false;
+            isEmpty = false;
+        }
+        if(current == "key") {
+            isSword = false;
+            isPickaxe = false;
+            isKey = true;
+            isEmpty = false;
         }
     }
+    
+    //public void displayImage() {
+    //    if()
+    //}
 }

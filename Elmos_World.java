@@ -11,9 +11,9 @@ public class Elmos_World extends World
     public static Inventory i1 = new Inventory();
     public static Inventory i2 = new Inventory();
     public static Inventory i3 = new Inventory();
-    private Blob me = new Blob();
+    public static Blob me = new Blob();
     private boolean e_pressed = false;
-    private int countDown = 5;
+    private int countDown = 10;
     
     public Elmos_World()
     {    
@@ -31,7 +31,7 @@ public class Elmos_World extends World
         }
         if(countDown <= 0) {
             action();
-            countDown = 50;
+            countDown = 10;
             // right now we need to hold e to open it cuz we need a count down
             // count down needed or 'e' is pressed for too long
             // doesn't register that we aren't pressing e anymore
@@ -49,6 +49,24 @@ public class Elmos_World extends World
                 e_pressed = true;
             }
         }
+        if(e_pressed) {
+            if (Greenfoot.isKeyDown("d")) {
+                hideInventory();
+                showInventory(me.getX(), me.getY());
+            }
+            if (Greenfoot.isKeyDown("a")) {
+                hideInventory();
+                showInventory(me.getX(), me.getY());
+            }
+            if (Greenfoot.isKeyDown("w")) {
+                hideInventory();
+                showInventory(me.getX(), me.getY());
+            }
+            if (Greenfoot.isKeyDown("s")) {
+                hideInventory();
+                showInventory(me.getX(), me.getY());
+            }
+        }
     }
     
     public void showInventory(int x, int y) {
@@ -63,4 +81,9 @@ public class Elmos_World extends World
         removeObject(i3);
     }
     
+    public static void addToSlot(String item) {
+        if(i1.isEmpty) {
+            // if i1 is empty, need to add image of item to empty, otherwise try i2 or i3
+        }
+    }
 }
