@@ -12,7 +12,7 @@ public class Elmos_World extends World
     public static Inventory i2 = new Inventory();
     public static Inventory i3 = new Inventory();
     public static Blob me = new Blob();
-    private boolean e_pressed = false;
+    public static boolean e_pressed = false;
     private int countDown = 10;
     
     public Elmos_World()
@@ -53,18 +53,30 @@ public class Elmos_World extends World
             if (Greenfoot.isKeyDown("d")) {
                 hideInventory();
                 showInventory(me.getX(), me.getY());
+                if (!i1.isEmpty) {
+                    me.rearrangeYourselfImmediately("right");
+                }
             }
             if (Greenfoot.isKeyDown("a")) {
                 hideInventory();
                 showInventory(me.getX(), me.getY());
+                if (!i1.isEmpty) {
+                    me.rearrangeYourselfImmediately("left");
+                }
             }
             if (Greenfoot.isKeyDown("w")) {
                 hideInventory();
                 showInventory(me.getX(), me.getY());
+                if (!i1.isEmpty) {
+                    me.rearrangeYourselfImmediately("up");
+                }
             }
             if (Greenfoot.isKeyDown("s")) {
                 hideInventory();
                 showInventory(me.getX(), me.getY());
+                if (!i1.isEmpty) {
+                    me.rearrangeYourselfImmediately("down");
+                }
             }
         }
     }
@@ -81,9 +93,5 @@ public class Elmos_World extends World
         removeObject(i3);
     }
     
-    public static void addToSlot(String item) {
-        if(i1.isEmpty) {
-            // if i1 is empty, need to add image of item to empty, otherwise try i2 or i3
-        }
-    }
+    
 }

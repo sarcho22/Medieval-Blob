@@ -15,7 +15,7 @@ public class Inventory extends Actor
     public boolean isPickaxe;
     public boolean isSword;
     public boolean isKey;
-    public boolean isEmpty;
+    public boolean isEmpty = true;
     
     public void act() 
     {

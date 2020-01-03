@@ -18,7 +18,14 @@ public class Sword extends Actor
         // Add your action code here.
         if(isTouching(Blob.class)) {
             pickedUp = true;
-            setLocation(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, Elmos_World.me.getY());
+            
+            
+            setLocation(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, Elmos_World.me.getY()-10);
         }
-    }    
+        else{
+            pickedUp = false;
+        }
+        
+        
+    }   
 }
