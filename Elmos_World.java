@@ -50,7 +50,6 @@ public class Elmos_World extends World
                 hideInventory();
                 showInventory(me.getX(), me.getY());
                 if (!i1.isEmpty) {
-                    showText("u begone", 100, 100);
                     me.rearrangeYourselfImmediately("right");
                 }
             }
