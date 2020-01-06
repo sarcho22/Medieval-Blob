@@ -24,23 +24,7 @@ public void act()
     countDown--;
     action();
     if(isTouching(Sword.class)) {
-        if(Elmos_World.e_pressed && !sword) {
-            i = new Sword();
-            sword = true;
-                if(Elmos_World.i1.isEmpty) {
-                    getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
-                }
-                else if(Elmos_World.i2.isEmpty) {
-                    getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
-                }
-                else if(Elmos_World.i3.isEmpty) {
-                    getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
-                }
-                
-        }
-        if(!Elmos_World.e_pressed){
-            getWorld().removeObject(i);
-        }
+        store_inven("sword");
     }
     else{
         sword = false;
@@ -124,5 +108,27 @@ public void act()
     
     public void unlock() {
         // also check if u touching door
+    }
+    
+    public void store_inven(String blep){
+        if(blep.equals("sword")) {
+            if(Elmos_World.e_pressed && !sword) {
+            i = new Sword();
+            sword = true;
+                if(Elmos_World.i1.isEmpty) {
+                    getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
+                }
+                else if(Elmos_World.i2.isEmpty) {
+                    getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
+                }
+                else if(Elmos_World.i3.isEmpty) {
+                    getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
+                }
+                
+            }
+            if(!Elmos_World.e_pressed){
+                getWorld().removeObject(i);
+            }
+        }
     }
 }
