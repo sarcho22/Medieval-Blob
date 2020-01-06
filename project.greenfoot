@@ -1,5 +1,5 @@
 #Greenfoot project file
-class.Blob.image=baby1.png
+class.Blob.image=probably_blob.png
 class.Elmos_World.image=floor.jpg
 class.Inventory.image=inventory-box.png
 class.Mob_1.image=blob_monster_resized.png
@@ -40,9 +40,9 @@ dependency8.type=UsesDependency
 dependency9.from=Inventory
 dependency9.to=Pickaxe
 dependency9.type=UsesDependency
-editor.fx.0.height=739
-editor.fx.0.width=816
-editor.fx.0.x=275
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
 editor.fx.0.y=0
 height=734
 package.numDependencies=11
