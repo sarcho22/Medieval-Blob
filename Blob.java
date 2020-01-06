@@ -1,46 +1,51 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class kingBlob here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+* Write a description of class kingBlob here.
+* 
+* @author (your name) 
+* @version (a version number or a date)
+*/
 public class Blob extends Actor
 {
-    private int health = 100;
-    private int countDown = 10;
-    public static Actor i = null;
-    public boolean sword = false;
-    /**
-     * Act - do whatever the kingBlob wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-        move();
-        checkMobs();
-        countDown--;
-        action();
-        if(isTouching(Sword.class)) {
-            if(!sword) {
-                getWorld().showText("wweewsdsdadsadsfgsasfds", 100, 100);
-                i = new Sword();
-                sword = true;
-                if(Elmos_World.e_pressed) {
-                    if(Elmos_World.i1.isEmpty) {
-                        getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
-                    }
-                    else if(Elmos_World.i2.isEmpty) {
-                        getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
-                    }
-                    else if(Elmos_World.i3.isEmpty) {
-                        getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
-                    }
+private int health = 100;
+private int countDown = 10;
+public static Actor i = null;
+public boolean sword = false;
+/**
+ * Act - do whatever the kingBlob wants to do. This method is called whenever
+ * the 'Act' or 'Run' button gets pressed in the environment.
+ */
+public void act() 
+{
+    // Add your action code here.
+    move();
+    checkMobs();
+    countDown--;
+    action();
+    if(isTouching(Sword.class)) {
+        if(Elmos_World.e_pressed && !sword) {
+            i = new Sword();
+            sword = true;
+                if(Elmos_World.i1.isEmpty) {
+                    getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
                 }
-            }
+                else if(Elmos_World.i2.isEmpty) {
+                    getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
+                }
+                else if(Elmos_World.i3.isEmpty) {
+                    getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
+                }
+                
         }
+        if(!Elmos_World.e_pressed){
+            getWorld().removeObject(i);
+        }
+    }
+    else{
+        sword = false;
+    }
+    
     }    
     
     public void action() {
@@ -88,7 +93,7 @@ public class Blob extends Actor
     public void rearrangeYourselfImmediately(String direction) {
         if(direction.equals("left")){
             ((Elmos_World)getWorld()).removeObject(i);
-            getWorld().addObject(i, getX()-33, getY()-(2*Elmos_World.i1.getImage().getHeight()));
+            getWorld().addObject(i, getX()+27, getY()-(2*Elmos_World.i1.getImage().getHeight()));
         }
         if(direction.equals("right")){
             ((Elmos_World)getWorld()).removeObject(i);
