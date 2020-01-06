@@ -32,10 +32,6 @@ public class Elmos_World extends World
         if(countDown <= 0) {
             action();
             countDown = 10;
-            // right now we need to hold e to open it cuz we need a count down
-            // count down needed or 'e' is pressed for too long
-            // doesn't register that we aren't pressing e anymore
-            // fix later
         }
         countDown--;
     }
@@ -54,6 +50,7 @@ public class Elmos_World extends World
                 hideInventory();
                 showInventory(me.getX(), me.getY());
                 if (!i1.isEmpty) {
+                    showText("u begone", 100, 100);
                     me.rearrangeYourselfImmediately("right");
                 }
             }

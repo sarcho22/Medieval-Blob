@@ -11,6 +11,7 @@ public class Blob extends Actor
     private int health = 100;
     private int countDown = 10;
     public static Actor i = null;
+    public boolean sword = false;
     /**
      * Act - do whatever the kingBlob wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -23,17 +24,20 @@ public class Blob extends Actor
         countDown--;
         action();
         if(isTouching(Sword.class)) {
-            
-            i = new Sword();
-            if(Elmos_World.e_pressed) {
-                if(Elmos_World.i1.isEmpty) {
-                    getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
-                }
-                else if(Elmos_World.i2.isEmpty) {
-                    getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
-                }
-                else if(Elmos_World.i3.isEmpty) {
-                    getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
+            if(!sword) {
+                getWorld().showText("wweewsdsdadsadsfgsasfds", 100, 100);
+                i = new Sword();
+                sword = true;
+                if(Elmos_World.e_pressed) {
+                    if(Elmos_World.i1.isEmpty) {
+                        getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
+                    }
+                    else if(Elmos_World.i2.isEmpty) {
+                        getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
+                    }
+                    else if(Elmos_World.i3.isEmpty) {
+                        getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
+                    }
                 }
             }
         }
@@ -83,16 +87,20 @@ public class Blob extends Actor
     
     public void rearrangeYourselfImmediately(String direction) {
         if(direction.equals("left")){
-            i.setLocation(i.getX()-3, i.getY());
+            ((Elmos_World)getWorld()).removeObject(i);
+            getWorld().addObject(i, getX()-33, getY()-(2*Elmos_World.i1.getImage().getHeight()));
         }
         if(direction.equals("right")){
-            i.setLocation(i.getX()+3, i.getY());
+            ((Elmos_World)getWorld()).removeObject(i);
+            getWorld().addObject(i, getX()+33, getY()-(2*Elmos_World.i1.getImage().getHeight()));
         }
         if(direction.equals("down")){
-            i.setLocation(i.getX(), i.getY()+3);
+            ((Elmos_World)getWorld()).removeObject(i);
+            getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight())+3);
         }
         if(direction.equals("up")){
-            i.setLocation(i.getX(), i.getY()-3);
+            ((Elmos_World)getWorld()).removeObject(i);
+            getWorld().addObject(i, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight())-3);
         }
     }
     
