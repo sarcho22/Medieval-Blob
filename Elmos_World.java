@@ -50,28 +50,52 @@ public class Elmos_World extends World
                 hideInventory();
                 showInventory(me.getX(), me.getY());
                 if (!i1.isEmpty) {
-                    me.rearrangeYourselfImmediately("right");
+                    me.rearrangeYourselfImmediately1("right");
+                }
+                if (!i2.isEmpty) {
+                    me.rearrangeYourselfImmediately2("right");
+                }
+                if (!i3.isEmpty) {
+                    me.rearrangeYourselfImmediately2("right");
                 }
             }
             if (Greenfoot.isKeyDown("a")) {
                 hideInventory();
                 showInventory(me.getX(), me.getY());
                 if (!i1.isEmpty) {
-                    me.rearrangeYourselfImmediately("left");
+                    me.rearrangeYourselfImmediately1("left");
+                }
+                if (!i2.isEmpty) {
+                    me.rearrangeYourselfImmediately2("left");
+                }
+                if (!i3.isEmpty) {
+                    me.rearrangeYourselfImmediately3("left");
                 }
             }
             if (Greenfoot.isKeyDown("w")) {
                 hideInventory();
                 showInventory(me.getX(), me.getY());
                 if (!i1.isEmpty) {
-                    me.rearrangeYourselfImmediately("up");
+                    me.rearrangeYourselfImmediately1("up");
+                }
+                if (!i2.isEmpty) {
+                    me.rearrangeYourselfImmediately2("up");
+                }
+                if (!i3.isEmpty) {
+                    me.rearrangeYourselfImmediately3("up");
                 }
             }
             if (Greenfoot.isKeyDown("s")) {
                 hideInventory();
                 showInventory(me.getX(), me.getY());
                 if (!i1.isEmpty) {
-                    me.rearrangeYourselfImmediately("down");
+                    me.rearrangeYourselfImmediately1("down");
+                }
+                if (!i2.isEmpty) {
+                    me.rearrangeYourselfImmediately2("down");
+                }
+                if (!i3.isEmpty) {
+                    me.rearrangeYourselfImmediately3("down");
                 }
             }
         }
