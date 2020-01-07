@@ -20,15 +20,12 @@ dependency11.type=UsesDependency
 dependency12.from=Sword
 dependency12.to=Elmos_World
 dependency12.type=UsesDependency
-dependency13.from=Inventory
-dependency13.to=Pickaxe
+dependency13.from=Key
+dependency13.to=Blob
 dependency13.type=UsesDependency
-dependency14.from=Inventory
-dependency14.to=Sword
+dependency14.from=Key
+dependency14.to=Elmos_World
 dependency14.type=UsesDependency
-dependency15.from=Inventory
-dependency15.to=Key
-dependency15.type=UsesDependency
 dependency2.from=Elmos_World
 dependency2.to=Blob
 dependency2.type=UsesDependency
@@ -53,17 +50,12 @@ dependency8.type=UsesDependency
 dependency9.from=Pickaxe
 dependency9.to=Blob
 dependency9.type=UsesDependency
-editor.fx.0.height=737
-editor.fx.0.width=814
-editor.fx.0.x=360
-editor.fx.0.y=28
-<<<<<<< HEAD
-height=838
-package.numDependencies=11
-=======
-height=743
-package.numDependencies=15
->>>>>>> 3890080881b5f164f887169052b34b19798a035c
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+height=734
+package.numDependencies=14
 package.numTargets=14
 project.charset=windows-1252
 publish.hasSource=false
@@ -178,14 +170,7 @@ target9.width=80
 target9.x=0
 target9.y=0
 version=3.0.0
-<<<<<<< HEAD
-width=1550
+width=1075
 world.lastInstantiated=Elmos_World
-xPosition=0
+xPosition=230
 yPosition=0
-=======
-width=1016
-world.lastInstantiated=Elmos_World
-xPosition=42
-yPosition=16
->>>>>>> 3890080881b5f164f887169052b34b19798a035c
