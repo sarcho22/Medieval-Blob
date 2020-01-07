@@ -56,7 +56,7 @@ public class Elmos_World extends World
                     me.rearrangeYourselfImmediately2("right");
                 }
                 if (!i3.isEmpty) {
-                    me.rearrangeYourselfImmediately2("right");
+                    me.rearrangeYourselfImmediately3("right");
                 }
             }
             if (Greenfoot.isKeyDown("a")) {
@@ -102,9 +102,9 @@ public class Elmos_World extends World
     }
     
     public void showInventory(int x, int y) {
-        addObject(i1, x+30, y-(2*i1.getImage().getHeight()));
-        addObject(i2, x+30, y-(i1.getImage().getHeight()));
-        addObject(i3, x+30, y);
+        addObject(i1, x+30, y-(3*i1.getImage().getHeight()));
+        addObject(i2, x+30, y-(2*i2.getImage().getHeight()));
+        addObject(i3, x+30, y-(1*i3.getImage().getHeight()));
     }
     
     public void hideInventory() {
