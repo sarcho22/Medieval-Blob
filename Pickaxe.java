@@ -15,13 +15,11 @@ public class Pickaxe extends Actor
     public boolean firstPickedUp = false;
     public void act() 
     {
-        if(isTouching(Blob.class) && !Elmos_World.me.holdingSomething) {
+        if(isTouching(Blob.class)) {
             firstPickedUp = true;
-            Elmos_World.me.holdingSomething = true;
-        }
-        if (firstPickedUp) {
+           
             setLocation(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, Elmos_World.me.getY()-10);
-        } 
+        }
       
     }    
 }
