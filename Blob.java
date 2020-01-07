@@ -255,6 +255,6 @@ public void act()
                 if (!Elmos_World.i1.isEmpty) {
                     getWorld().removeObject(i_value3);
                 }
-            }
+        }
     }
 }
