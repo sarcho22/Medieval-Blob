@@ -12,15 +12,13 @@ public class Sword extends Actor
      * Act - do whatever the Sword wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public boolean pickedUp = false;
+    public boolean firstPickedUp = false;
     public void act() 
     {
         // Add your action code here.
         if(isTouching(Blob.class)) {
-            pickedUp = true;
             setLocation(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, Elmos_World.me.getY()-10);
-        }
-        
+        }  
         
     }   
 }

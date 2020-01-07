@@ -12,23 +12,23 @@ public class Inventory extends Actor
      * Act - do whatever the inventory wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public boolean isPickaxe;
-    public boolean isSword;
-    public boolean isKey;
+    public boolean isPickaxe = false;
+    public boolean isSword = false;
+    public boolean isKey = false;
     public boolean isEmpty = true;
     
     public void act() 
     {
         // Add your action code here.
-        if(isTouching(Pickaxe.class)) {
-            turnOff("pickaxe");
-        }
-        if(isTouching(Sword.class)) {
-            turnOff("sword");
-        }
-        if(isTouching(Key.class)) {
-            turnOff("key");
-        }
+        //if(isTouching(Pickaxe.class)) {
+          //  turnOff("pickaxe");
+        //}
+        //if(isTouching(Sword.class)) {
+          //  turnOff("sword");
+        //}
+        //if(isTouching(Key.class)) {
+          //  turnOff("key");
+        //}
         //displayImage();
     }
     
