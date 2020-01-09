@@ -19,6 +19,7 @@ public class Elmos_World extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(750, 500, 1);
+        setPaintOrder(Sword_Image.class, Pickaxe_Image.class, Key_Image.class);
         addObject(me, me.getImage().getWidth()/2, getHeight()/2);
     }
     public void act() {
@@ -45,60 +46,62 @@ public class Elmos_World extends World
                 e_pressed = true;
             }
         }
-        if(e_pressed) {
-            if (Greenfoot.isKeyDown("d")) {
-                hideInventory();
-                showInventory(me.getX(), me.getY());
-                if (!i1.isEmpty) {
-                    me.rearrangeYourselfImmediately1("right");
-                }
-                if (!i2.isEmpty) {
-                    me.rearrangeYourselfImmediately2("right");
-                }
-                if (!i3.isEmpty) {
-                    me.rearrangeYourselfImmediately3("right");
-                }
-            }
-            if (Greenfoot.isKeyDown("a")) {
-                hideInventory();
-                showInventory(me.getX(), me.getY());
-                if (!i1.isEmpty) {
-                    me.rearrangeYourselfImmediately1("left");
-                }
-                if (!i2.isEmpty) {
-                    me.rearrangeYourselfImmediately2("left");
-                }
-                if (!i3.isEmpty) {
-                    me.rearrangeYourselfImmediately3("left");
-                }
-            }
-            if (Greenfoot.isKeyDown("w")) {
-                hideInventory();
-                showInventory(me.getX(), me.getY());
-                if (!i1.isEmpty) {
-                    me.rearrangeYourselfImmediately1("up");
-                }
-                if (!i2.isEmpty) {
-                    me.rearrangeYourselfImmediately2("up");
-                }
-                if (!i3.isEmpty) {
-                    me.rearrangeYourselfImmediately3("up");
-                }
-            }
-            if (Greenfoot.isKeyDown("s")) {
-                hideInventory();
-                showInventory(me.getX(), me.getY());
-                if (!i1.isEmpty) {
-                    me.rearrangeYourselfImmediately1("down");
-                }
-                if (!i2.isEmpty) {
-                    me.rearrangeYourselfImmediately2("down");
-                }
-                if (!i3.isEmpty) {
-                    me.rearrangeYourselfImmediately3("down");
-                }
-            }
-        }
+        
+        // if(e_pressed) {
+            // if (Greenfoot.isKeyDown("d")) {
+                // hideInventory();
+                // showInventory(me.getX(), me.getY());
+                // if (!i1.isEmpty) {
+                    // me.rearrangeYourselfImmediately1("right");
+                // }
+                // if (!i2.isEmpty) {
+                    // me.rearrangeYourselfImmediately2("right");
+                // }
+                // if (!i3.isEmpty) {
+                    // me.rearrangeYourselfImmediately3("right");
+                // }
+            // }
+            // if (Greenfoot.isKeyDown("a")) {
+                // hideInventory();
+                // showInventory(me.getX(), me.getY());
+                // if (!i1.isEmpty) {
+                    // me.rearrangeYourselfImmediately1("left");
+                // }
+                // if (!i2.isEmpty) {
+                    // me.rearrangeYourselfImmediately2("left");
+                // }
+                // if (!i3.isEmpty) {
+                    // me.rearrangeYourselfImmediately3("left");
+                // }
+            // }
+            // if (Greenfoot.isKeyDown("w")) {
+                // hideInventory();
+                // showInventory(me.getX(), me.getY());
+                // if (!i1.isEmpty) {
+                    // me.rearrangeYourselfImmediately1("up");
+                // }
+                // if (!i2.isEmpty) {
+                    // me.rearrangeYourselfImmediately2("up");
+                // }
+                // if (!i3.isEmpty) {
+                    // me.rearrangeYourselfImmediately3("up");
+                // }
+            // }
+            // if (Greenfoot.isKeyDown("s")) {
+                // hideInventory();
+                // showInventory(me.getX(), me.getY());
+                // if (!i1.isEmpty) {
+                    // me.rearrangeYourselfImmediately1("down");
+                // }
+                // if (!i2.isEmpty) {
+                    // me.rearrangeYourselfImmediately2("down");
+                // }
+                // if (!i3.isEmpty) {
+                    // me.rearrangeYourselfImmediately3("down");
+                // }
+            // }
+        // }
+       
     }
     
     public void showInventory(int x, int y) {
