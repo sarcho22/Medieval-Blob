@@ -37,7 +37,6 @@ public void act()
         sword = false;
     }
     if (isTouching(Pickaxe.class)) {
-        getWorld().showText("hi?", 100, 100);
         store_inven("pickaxe");
     }
     else {
@@ -97,6 +96,7 @@ public void act()
     public void rearrangeYourselfImmediately1(String direction) {
         if(direction.equals("left")){
             ((Elmos_World)getWorld()).removeObject(i_value1);
+            
             getWorld().addObject(i_value1, getX()+27, getY()-(3*Elmos_World.i1.getImage().getHeight()));
         }
         if(direction.equals("right")){
@@ -203,7 +203,9 @@ public void act()
             //}
         }
         if (blep.equals("pickaxe")) {
-            if(Elmos_World.e_pressed && !pickaxe) {
+            
+            if(!pickaxe) {
+                getWorld().showText("" + Elmos_World.i2.isPickaxe, 100, 100);
                 pickaxe = true;
                 if(Elmos_World.i1.isPickaxe) {
                     i_value1 = new Pickaxe();

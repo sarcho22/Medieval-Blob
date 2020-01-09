@@ -25,7 +25,7 @@ public class Pickaxe extends Actor
                 }
                 else if (Elmos_World.i2.isEmpty) {
                     Elmos_World.i2.turnOff("pickaxe");
-                    getWorld().showText("" + Elmos_World.i2.isPickaxe, 200,300);
+                    
                 }
                 else if (Elmos_World.i3.isEmpty) {
                     Elmos_World.i3.turnOff("pickaxe");
