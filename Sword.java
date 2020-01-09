@@ -19,6 +19,9 @@ public class Sword extends Actor
         // Add your action code here.
         if(isTouching(Blob.class)) {
             setLocation(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, Elmos_World.me.getY()-10);
+            Sword_Image i = new Sword_Image();
+            //if e pressed, add this and later get rid of calling store_inven thing idk
+            getWorld().addObject(i);
             blah--;
             if (!pickedUp) {
                 if (Elmos_World.i1.isEmpty) {
