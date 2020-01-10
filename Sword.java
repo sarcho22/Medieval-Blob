@@ -13,20 +13,22 @@ public class Sword extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public boolean pickedUp = false;
-    public int blah = 13;
+    public int timer = 13;
     public void act() 
     {
         // Add your action code here.
         if(isTouching(Blob.class)) {
             setLocation(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, Elmos_World.me.getY()-10);
             Sword_Image i = new Sword_Image();
-            //if e pressed, add this and later get rid of calling store_inven thing idk
-            getWorld().addObject(i);
-            blah--;
+            if (Elmos_World.e_pressed){
+                ((Elmos_World) getWorld()).addObject(i, 1, 1);
+            }
+            //later get rid of calling store_inven thing idk
+            
+            timer--;
             if (!pickedUp) {
                 if (Elmos_World.i1.isEmpty) {
                     Elmos_World.i1.turnOff("sword");
-                    getWorld().showText("here?", 200, 200);
                 }
                 else if (Elmos_World.i2.isEmpty) {
                     Elmos_World.i2.turnOff("sword");
@@ -36,11 +38,9 @@ public class Sword extends Actor
                 }
                 pickedUp = true;
             }
-            if (blah <= 0 && !Elmos_World.i1.isSword) {
+            if (timer <= 0 && !Elmos_World.i1.isSword) {
                 getWorld().removeObject(this);
             }
-        }  
-        
-        
+        }
     }   
 }
