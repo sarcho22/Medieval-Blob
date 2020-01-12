@@ -23,22 +23,18 @@ public class Sword extends Actor
         // Add your action code here.
         if(isTouching(Blob.class)) {
             setLocation(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, Elmos_World.me.getY()-10);
-<<<<<<< HEAD
             Sword_Image i = new Sword_Image();
             //if e pressed, add this and later get rid of calling store_inven thing idk
-            getWorld().addObject(i, 100, 100);
-            blah--;
-=======
+            //getWorld().addObject(i, 100, 100);
+            
             ever_touched = true;
             // Sword_Image i = new Sword_Image();
             timer--;
->>>>>>> 57bc349f162dddad0d3388ede46c9b3ebe40be4d
             if (!pickedUp) {
                 if (Elmos_World.i1.isEmpty) {
                     Elmos_World.i1.turnOff("sword");
                 }
                 else if (Elmos_World.i2.isEmpty) {
-                    getWorld().showText("" + ever_touched, 100, 200);
                     Elmos_World.i2.turnOff("sword");
                 }
                 else if (Elmos_World.i3.isEmpty) {
@@ -47,13 +43,12 @@ public class Sword extends Actor
                 pickedUp = true;
             }
             if (timer <= 0 && !Elmos_World.i1.isSword) {
-                getWorld().removeObject(this);
+                setLocation(5000, 5000);
             }
         }
-        
         if (Elmos_World.e_pressed && !something_normal && ever_touched){
                 // e_pressed is the issue!!!!!!
-                getWorld().showText("wheeeeeeeeeeeeeeeee?", 100, 200);
+                getWorld().showText("wheeeeeeeeeeeeeeeee?", 100, 100);
                 if(Elmos_World.i1.isSword) {
                     ((Elmos_World)getWorld()).addObject(i, Elmos_World.me.getX()+30, Elmos_World.me.getY()-(3*Elmos_World.i1.getImage().getHeight()));
                 }
@@ -68,7 +63,7 @@ public class Sword extends Actor
             }
         else if(!Elmos_World.e_pressed && ever_touched){
             if(i.getWorld() != null) {
-                getWorld().removeObject(i);
+              getWorld().removeObject(i);
             }
             something_normal = false;
         }

@@ -127,7 +127,11 @@ public class Elmos_World extends World
         addObject(sword,543,436);
         Pickaxe pickaxe = new Pickaxe();
         addObject(pickaxe,446,213);
-        Key_Image key_Image = new Key_Image();
-        addObject(key_Image,704,27);
+        Key key = new Key();
+        addObject(key,704,27);
+        addObject(new Border(), 0, 0);
+        addObject(new Border(), 1 * 500, 0);
+        addObject(new Border(), 0, getHeight());
+        addObject(new Border(), 1 * 500, getHeight());
     }
 }
