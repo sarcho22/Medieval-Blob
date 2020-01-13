@@ -54,6 +54,7 @@ dependency20.type=UsesDependency
 dependency21.from=Sword
 dependency21.to=Blob
 dependency21.type=UsesDependency
+<<<<<<< HEAD
 dependency22.from=Key
 dependency22.to=Key_Image
 dependency22.type=UsesDependency
@@ -63,6 +64,20 @@ dependency23.type=UsesDependency
 dependency24.from=Key
 dependency24.to=Blob
 dependency24.type=UsesDependency
+=======
+dependency22.from=Sword
+dependency22.to=Mob_1
+dependency22.type=UsesDependency
+dependency23.from=Key
+dependency23.to=Key_Image
+dependency23.type=UsesDependency
+dependency24.from=Key
+dependency24.to=Elmos_World
+dependency24.type=UsesDependency
+dependency25.from=Key
+dependency25.to=Blob
+dependency25.type=UsesDependency
+>>>>>>> f45492d841d5bee409f5001e95853f33b62b6128
 dependency3.from=Elmos_World
 dependency3.to=Sword
 dependency3.type=UsesDependency
@@ -84,12 +99,21 @@ dependency8.type=UsesDependency
 dependency9.from=Elmos_World
 dependency9.to=Key_Image
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
 editor.fx.0.y=0
 height=743
 package.numDependencies=24
+=======
+editor.fx.0.height=737
+editor.fx.0.width=813
+editor.fx.0.x=171
+editor.fx.0.y=13
+height=744
+package.numDependencies=25
+>>>>>>> f45492d841d5bee409f5001e95853f33b62b6128
 package.numTargets=18
 project.charset=windows-1252
 publish.hasSource=false
@@ -232,7 +256,7 @@ target9.width=80
 target9.x=0
 target9.y=0
 version=3.0.0
-width=1016
+width=1382
 world.lastInstantiated=Elmos_World
-xPosition=42
-yPosition=16
+xPosition=0
+yPosition=0

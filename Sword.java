@@ -21,6 +21,7 @@ public class Sword extends Actor
     public void act() 
     {
         // Add your action code here.
+        check();
         if(isTouching(Blob.class)) {
             setLocation(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, Elmos_World.me.getY()-10);
             Sword_Image i = new Sword_Image();
@@ -48,7 +49,6 @@ public class Sword extends Actor
         }
         if (Elmos_World.e_pressed && !something_normal && ever_touched){
                 // e_pressed is the issue!!!!!!
-                getWorld().showText("wheeeeeeeeeeeeeeeee?", 100, 100);
                 if(Elmos_World.i1.isSword) {
                     ((Elmos_World)getWorld()).addObject(i, Elmos_World.me.getX()+30, Elmos_World.me.getY()-(3*Elmos_World.i1.getImage().getHeight()));
                 }
@@ -68,5 +68,13 @@ public class Sword extends Actor
             something_normal = false;
         }
         
-    }   
+    } 
+    public boolean check() {
+        if(isTouching(Mob_1.class)) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
