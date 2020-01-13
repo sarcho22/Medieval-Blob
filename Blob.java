@@ -20,6 +20,7 @@ public boolean holdingSomething = false;
 public int speed = 3;
 public int distance = 30;
 public boolean touching = false;
+public int mobTimer = 100;
 /**
  * Act - do whatever the kingBlob wants to do. This method is called whenever
  * the 'Act' or 'Run' button gets pressed in the environment.
@@ -30,9 +31,11 @@ public void act()
     if (!Elmos_World.e_pressed) {
         move();
     }
+    mobTimer--;
+    checkMobTimer();
     checkMobs();
     countDown--;
-    //action();
+    action();
     if(isTouching(Sword.class)) {
         //store_inven("sword", Elmos_World.e_pressed);
     }
@@ -81,7 +84,14 @@ public void act()
             setLocation(getX(), getY()+2*1);
         }
     }
-    
+    public void checkMobTimer(){
+        if (mobTimer <= 0){
+            mobTimer = 250;
+            Mob_1 m1 = new Mob_1();
+            Mob_1 m2 = new Mob_1();
+            Mob_1 m3 = new Mob_1();
+        }
+    }
     public void checkMobs() {
         if(countDown <= 0) {
             if(isTouching(Mob_1.class)) {
@@ -163,10 +173,15 @@ public void act()
     }
     
     public void mine() {
+        if (isTouching(therock.class)){
+            removeTouching(therock.class);
+        }
     }
     
     public void unlock() {
-        // also check if u touching door
+        if (isTouching(Door.class)){
+            
+        }
     }
     /*
     public void store_inven(String blep, boolean open_inventory){
