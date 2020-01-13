@@ -33,25 +33,24 @@ public void act()
     countDown--;
     //action();
     if(isTouching(Sword.class)) {
-        store_inven("sword");
+        //store_inven("sword", Elmos_World.e_pressed);
     }
     else{
         sword = false;
     }
     if (isTouching(Pickaxe.class)) {
-        store_inven("pickaxe");
+        //store_inven("pickaxe");
     }
     else {
         pickaxe = false;
     }
     if (isTouching(Key.class)) {
-        store_inven("key");
+        //store_inven("key");
     }
     else {
         key = false;
     }
-    
-   }    
+}    
     
     public void action() {
         if(Greenfoot.isKeyDown("f")) {
@@ -92,13 +91,9 @@ public void act()
         }
         
     }
-    
-    
-    
     public void rearrangeYourselfImmediately1(String direction) {
         if(direction.equals("left")){
             ((Elmos_World)getWorld()).removeObject(i_value1);
-            
             getWorld().addObject(i_value1, getX()+27, getY()-(3*Elmos_World.i1.getImage().getHeight()));
         }
         if(direction.equals("right")){
@@ -107,11 +102,11 @@ public void act()
         }
         if(direction.equals("down")){
             ((Elmos_World)getWorld()).removeObject(i_value1);
-            getWorld().addObject(i_value1, getX()+30, getY()-(3*Elmos_World.i1.getImage().getHeight())+3);
+            getWorld().addObject(i_value1, getX()+distance, getY()-(3*Elmos_World.i1.getImage().getHeight())+3);
         }
         if(direction.equals("up")){
             ((Elmos_World)getWorld()).removeObject(i_value1);
-            getWorld().addObject(i_value1, getX()+30, getY()-(3*Elmos_World.i1.getImage().getHeight())-3);
+            getWorld().addObject(i_value1, getX()+distance, getY()-(3*Elmos_World.i1.getImage().getHeight())-3);
         }
     }
     
@@ -145,11 +140,11 @@ public void act()
         }
         if(direction.equals("down")){
             ((Elmos_World)getWorld()).removeObject(i_value3);
-            getWorld().addObject(i_value3, getX()+30, getY()-(1*Elmos_World.i2.getImage().getHeight())+3);
+            getWorld().addObject(i_value3, getX()+distance, getY()-(1*Elmos_World.i2.getImage().getHeight())+3);
         }
         if(direction.equals("up")){
             ((Elmos_World)getWorld()).removeObject(i_value3);
-            getWorld().addObject(i_value3, getX()+30, getY()-(1*Elmos_World.i2.getImage().getHeight())-3);
+            getWorld().addObject(i_value3, getX()+distance, getY()-(1*Elmos_World.i2.getImage().getHeight())-3);
         }
     }
     
@@ -169,15 +164,12 @@ public void act()
     public void unlock() {
         // also check if u touching door
     }
-    
-    public void store_inven(String blep){
+    /*
+    public void store_inven(String blep, boolean open_inventory){
         if(blep.equals("sword")) {
-            if(Elmos_World.e_pressed && !sword) {
+            if(open_inventory && !sword) {
                 sword = true;
                 if(Elmos_World.i1.isSword) {
-                    getWorld().showText("hgfdshjgghf?",  100, 100);
-                    getWorld().removeObject(Elmos_World.i1);
-                    Elmos_World.i1.setLocation(100, 100);
                     i_value1 = new Sword();
                     ((Elmos_World)getWorld()).addObject(i_value1, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
                     //Elmos_World.i1.turnOff("sword");
@@ -192,7 +184,6 @@ public void act()
                     getWorld().addObject(i_value3, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
                     //Elmos_World.i3.turnOff("sword");
                 }
-                
             }
             //if(!Elmos_World.e_pressed){
               //  if (!Elmos_World.i1.isEmpty) {
@@ -201,15 +192,13 @@ public void act()
               //  if (!Elmos_World.i2.isEmpty) {
               //      getWorld().removeObject(i_value2);
               //  }
-              //  if (!Elmos_World.i1.isEmpty) {
+              //  if (!Elmos_World.i3.isEmpty) {
               //      getWorld().removeObject(i_value3);
               //  }
             //}
         }
         if (blep.equals("pickaxe")) {
-            
             if(!pickaxe) {
-                getWorld().showText("" + Elmos_World.i2.isPickaxe, 100, 100);
                 pickaxe = true;
                 if(Elmos_World.i1.isPickaxe) {
                     i_value1 = new Pickaxe();
@@ -217,7 +206,6 @@ public void act()
                     Elmos_World.i1.turnOff("pickaxe");
                 }
                 else if(Elmos_World.i2.isPickaxe) {
-                    getWorld().showText("weawewewae", 100, 200);
                     i_value2 = new Pickaxe();
                     getWorld().addObject(i_value2, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
                     Elmos_World.i2.turnOff("pickaxe");
@@ -227,36 +215,29 @@ public void act()
                     getWorld().addObject(i_value3, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
                     Elmos_World.i3.turnOff("pickaxe");
                 }
-                
             }
         }
         if (blep.equals("key")) {
             if(Elmos_World.e_pressed && !key) {
             key = true;
-                if(Elmos_World.i1.isKey) {
-                    i_value1 = new Key();
-                    getWorld().addObject(i_value1, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
-                    Elmos_World.i1.turnOff("key");
-                }
-                else if(Elmos_World.i2.isKey) {
-                    i_value2 = new Key();
-                    getWorld().addObject(i_value2, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
-                    Elmos_World.i2.turnOff("key");
-                }
-                else if(Elmos_World.i3.isKey) {
-                    i_value3 = new Key();
-                    getWorld().addObject(i_value3, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
-                    Elmos_World.i3.turnOff("key");
-                }
-                
+            if(Elmos_World.i1.isKey) {
+                i_value1 = new Key();
+                getWorld().addObject(i_value1, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
+                Elmos_World.i1.turnOff("key");
             }
-            //if(!Elmos_World.e_pressed){
-              //  if (!Elmos_World.i3.isEmpty) {
-              //      getWorld().removeObject(i_value3);
-              //  }
-            //}
+            else if(Elmos_World.i2.isKey) {
+                i_value2 = new Key();
+                getWorld().addObject(i_value2, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
+                Elmos_World.i2.turnOff("key");
+            }
+            else if(Elmos_World.i3.isKey) {
+                i_value3 = new Key();
+                getWorld().addObject(i_value3, getX()+30, getY()-(2*Elmos_World.i1.getImage().getHeight()));
+                Elmos_World.i3.turnOff("key");
+            }
+            }
         }
-        if(!Elmos_World.e_pressed){
+        if(!open_inventory){
                 if (!Elmos_World.i1.isEmpty) {
                     getWorld().removeObject(i_value1);
                 }
@@ -268,4 +249,5 @@ public void act()
                 }
         }
     }
+    */
 }
