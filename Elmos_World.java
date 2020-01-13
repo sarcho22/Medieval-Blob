@@ -36,6 +36,7 @@ public class Elmos_World extends World
             countDown = 10;
         }
         countDown--;
+        showText("" + me.health, 700, 25);
     }
 
     public void action() {

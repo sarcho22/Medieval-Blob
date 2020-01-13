@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 */
 public class Blob extends Actor
 {
-private int health = 100;
-private int countDown = 10;
+public int health = 100;
+private int countDown = 40;
 public static Actor i_value1 = null;
 public static Actor i_value2 = null;
 public static Actor i_value3 = null;
@@ -19,6 +19,7 @@ public boolean key = false;
 public boolean holdingSomething = false;
 public int speed = 3;
 public int distance = 30;
+public boolean touching = false;
 /**
  * Act - do whatever the kingBlob wants to do. This method is called whenever
  * the 'Act' or 'Run' button gets pressed in the environment.
@@ -29,7 +30,7 @@ public void act()
     if (!Elmos_World.e_pressed) {
         move();
     }
-    //checkMobs();
+    checkMobs();
     countDown--;
     //action();
     if(isTouching(Sword.class)) {
@@ -86,7 +87,7 @@ public void act()
             if(isTouching(Mob_1.class)) {
                 health -= 5;
                 checkHealth();
-                countDown = 10;
+                countDown = 40;
             }   
         }
         
@@ -150,12 +151,15 @@ public void act()
     
     public void checkHealth() {
         if(health <= 0) {
+            getWorld().showText("You died. You suck. Try harder lol", 375, 250);
             Greenfoot.stop();
         }
     }
     
     public void attack() {
-        
+        if(i_value1.getWorld() != null && touching && countDown <= 0) {
+            countDown = 35;
+        }
     }
     
     public void mine() {
