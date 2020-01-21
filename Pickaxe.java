@@ -21,6 +21,9 @@ public class Pickaxe extends Actor
     public void act() 
     {
         // Add your action code here.
+        if (Elmos_World.i1.isPickaxe) {
+            setLocation(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, Elmos_World.me.getY()-10);
+        }
         if(isTouching(Blob.class)) {
             setLocation(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, Elmos_World.me.getY()-10);
             Pickaxe_Image i = new Pickaxe_Image();

@@ -10,6 +10,7 @@ public class Blob extends Actor
 {
 public int health = 100;
 private int countDown = 40;
+public int countDown1 = 10;
 public static Actor i_value1 = null;
 public static Actor i_value2 = null;
 public static Actor i_value3 = null;
@@ -35,7 +36,11 @@ public void act()
     checkMobTimer();
     checkMobs();
     countDown--;
-    action();
+    countDown1--;
+    if(countDown1 <= 0) {
+        action();
+        countDown1 = 10;
+    }
     if(isTouching(Sword.class)) {
         //store_inven("sword", Elmos_World.e_pressed);
     }
@@ -67,6 +72,16 @@ public void act()
             if(Elmos_World.i1.isKey) {
                 unlock();
             }
+        }
+        if(Greenfoot.isKeyDown("2") && !Elmos_World.i2.isEmpty){
+            String temp = Elmos_World.i1.identity;
+            Elmos_World.i1.turnOff(Elmos_World.i2.identity);
+            Elmos_World.i2.turnOff(temp);
+        }
+        if(Greenfoot.isKeyDown("3") && !Elmos_World.i3.isEmpty){
+            String temp = Elmos_World.i1.identity;
+            Elmos_World.i1.turnOff(Elmos_World.i3.identity);
+            Elmos_World.i3.turnOff(temp);
         }
     }
     
@@ -180,7 +195,7 @@ public void act()
     
     public void unlock() {
         if (isTouching(Door.class)){
-            
+            ((Elmos_World)getWorld()).nextLevel();
         }
     }
     /*

@@ -14,14 +14,20 @@ public class Elmos_World extends World
     public static Blob me = new Blob();
     public static boolean e_pressed = false;
     private int countDown = 10;
+    public int currentLevel = 0;
+    public int maxLevel = 1;
 
     public Elmos_World()
     {    
         // Create a new world with 600x400 cells with cell size of 1x1 pixels.
         super(750, 500, 1);
-        setPaintOrder(Sword_Image.class, Pickaxe_Image.class, Key_Image.class);
+        setPaintOrder(Border.class, Sword_Image.class, Pickaxe_Image.class, Key_Image.class);
         addObject(me, me.getImage().getWidth()/2, getHeight()/2);
-        prepare();
+        addObject(new Border(), 0, 0);
+        addObject(new Border(), 1 * 500, 0);
+        addObject(new Border(), 0, getHeight());
+        addObject(new Border(), 1 * 500, getHeight());
+        nextLevel();
     }
 
     public void act() {
@@ -117,22 +123,42 @@ public class Elmos_World extends World
         removeObject(i2);
         removeObject(i3);
     }
-
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    private void prepare()
-    {
+    
+    public void nextLevel() {
+        if(currentLevel > maxLevel) {
+            // show some kind of screen but don't try to go to next level
+        }
+        else{
+            switch(++currentLevel){
+                case 1:
+                    level1();
+                    break;
+                case 2: 
+                    //level2();
+                    break;
+                case 3: 
+                    // we won;t get here yet
+            }
+        }
+    }
+    
+    public void level1() {
+        Pickaxe pickaxe = new Pickaxe();
+        addObject(pickaxe,446,250);
+        Key key = new Key();
+        addObject(key,704,27);
+        showText("Use 'W' 'A' 'S' 'D' to move, press 'E' to open your inventory.", 375, 355);
+        showText("Go to the pickaxe to pick it up! Press '1', '2', or '3' to switch items", 375, 370);
+        showText("To get to the next level, find the key, pick it up,", 375, 385);
+        showText("and press 'F' once you're touching the door (and holding the key).", 375, 400);
+    }
+    
+    public void level2() {
         Sword sword = new Sword();
         addObject(sword,543,436);
         Pickaxe pickaxe = new Pickaxe();
         addObject(pickaxe,446,213);
         Key key = new Key();
         addObject(key,704,27);
-        addObject(new Border(), 0, 0);
-        addObject(new Border(), 1 * 500, 0);
-        addObject(new Border(), 0, getHeight());
-        addObject(new Border(), 1 * 500, getHeight());
     }
 }

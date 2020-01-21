@@ -21,6 +21,10 @@ public class Key extends Actor
     public void act() 
     {
         // Add your action code here.
+        if (Elmos_World.i1.isKey) {
+            setLocation(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, Elmos_World.me.getY()-10);
+        
+        }
         if(isTouching(Blob.class)) {
             setLocation(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, Elmos_World.me.getY()-10);
             Key_Image i = new Key_Image();

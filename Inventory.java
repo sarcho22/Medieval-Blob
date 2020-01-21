@@ -16,6 +16,7 @@ public class Inventory extends Actor
     public boolean isSword = false;
     public boolean isKey = false;
     public boolean isEmpty = true;
+    public String identity;
     
     public void act() 
     {
@@ -51,6 +52,7 @@ public class Inventory extends Actor
             isKey = true;
             isEmpty = false;
         }
+        identity = current;
     }
     
     //public void displayImage() {
