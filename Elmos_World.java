@@ -147,6 +147,8 @@ public class Elmos_World extends World
         addObject(pickaxe,446,250);
         Key key = new Key();
         addObject(key,704,27);
+        Door door = new Door();
+        addObject(door, 400, 400);
         showText("Use 'W' 'A' 'S' 'D' to move, press 'E' to open your inventory.", 375, 355);
         showText("Go to the pickaxe to pick it up! Press '1', '2', or '3' to switch items", 375, 370);
         showText("To get to the next level, find the key, pick it up,", 375, 385);
