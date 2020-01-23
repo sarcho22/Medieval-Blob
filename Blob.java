@@ -189,12 +189,16 @@ public void act()
     
     public void mine() {
         if (isTouching(therock.class)){
+            Key key = new Key();
+            therock whe = (therock)(getOneIntersectingObject(therock.class));
+            ((Elmos_World)getWorld()).addObject(key, whe.getX(), whe.getY());
             removeTouching(therock.class);
         }
     }
     
     public void unlock() {
         if (isTouching(Door.class)){
+            removeTouching(Key.class);
             ((Elmos_World)getWorld()).nextLevel();
         }
     }

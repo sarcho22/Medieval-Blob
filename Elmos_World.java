@@ -15,7 +15,7 @@ public class Elmos_World extends World
     public static boolean e_pressed = false;
     private int countDown = 10;
     public int currentLevel = 0;
-    public int maxLevel = 1;
+    public int maxLevel = 3;
 
     public Elmos_World()
     {    
@@ -134,7 +134,7 @@ public class Elmos_World extends World
                     level1();
                     break;
                 case 2: 
-                    //level2();
+                    level2();
                     break;
                 case 3: 
                     // we won;t get here yet
@@ -148,7 +148,7 @@ public class Elmos_World extends World
         Key key = new Key();
         addObject(key,704,27);
         Door door = new Door();
-        addObject(door, 400, 400);
+        addObject(door, 750, 250);
         showText("Use 'W' 'A' 'S' 'D' to move, press 'E' to open your inventory.", 375, 355);
         showText("Go to the pickaxe to pick it up! Press '1', '2', or '3' to switch items", 375, 370);
         showText("To get to the next level, find the key, pick it up,", 375, 385);
@@ -156,11 +156,31 @@ public class Elmos_World extends World
     }
     
     public void level2() {
+        me.setLocation(me.getImage().getWidth()/2, getHeight()/2);
+        
+        Door door = new Door();
+        addObject(door, 750, 250);
+        
+        therock rock = new therock();
+        
+        addObject(rock, 400, 250);
+        showText("Can't find the key?", 375, 355);
+        showText("Try mining the rock! Hint: You have to use the pickaxe.", 375, 370);
+        showText("Press 'F' to use any item, not just the key.", 375, 385);
+        showText("Good Luck!", 375, 400);
+    }
+    
+    public void level3() {
+        me.setLocation(me.getImage().getWidth()/2, getHeight()/2);
         Sword sword = new Sword();
         addObject(sword,543,436);
-        Pickaxe pickaxe = new Pickaxe();
-        addObject(pickaxe,446,213);
         Key key = new Key();
         addObject(key,704,27);
+        Door door = new Door();
+        addObject(door, 750, 250);
+        showText("Can't find the key?", 375, 355);
+        showText("Try mining the rock! Hint: You have to use the pickaxe.", 375, 370);
+        showText("Press 'F' to use any item, not just the key.", 375, 385);
+        showText("Good Luck!", 375, 400);
     }
 }
