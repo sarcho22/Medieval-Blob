@@ -41,22 +41,13 @@ public void act()
         action();
         countDown1 = 10;
     }
-    if(isTouching(Sword.class)) {
-        //store_inven("sword", Elmos_World.e_pressed);
-    }
-    else{
+    if(!isTouching(Sword.class)) {
         sword = false;
     }
-    if (isTouching(Pickaxe.class)) {
-        //store_inven("pickaxe");
-    }
-    else {
+    if (!isTouching(Pickaxe.class)) {
         pickaxe = false;
     }
-    if (isTouching(Key.class)) {
-        //store_inven("key");
-    }
-    else {
+    if (!isTouching(Key.class)) {
         key = false;
     }
 }    

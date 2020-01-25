@@ -157,13 +157,14 @@ public class Elmos_World extends World
     
     public void level2() {
         me.setLocation(me.getImage().getWidth()/2, getHeight()/2);
-        
-        Door door = new Door();
-        addObject(door, 750, 250);
-        
         therock rock = new therock();
-        
         addObject(rock, 400, 250);
+        if (getObjectsAt(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, 
+             Elmos_World.me.getY()-10, Key.class) != null){
+            Door door = new Door();
+            addObject(door, 750, 250);
+        }
+        
         showText("Can't find the key?", 375, 355);
         showText("Try mining the rock! Hint: You have to use the pickaxe.", 375, 370);
         showText("Press 'F' to use any item, not just the key.", 375, 385);
