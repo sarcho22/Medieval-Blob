@@ -8,58 +8,45 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 */
 public class Blob extends Actor
 {
-public int health = 100;
-private int countDown = 40;
-public int countDown1 = 10;
-public static Actor i_value1 = null;
-public static Actor i_value2 = null;
-public static Actor i_value3 = null;
-public boolean sword = false;
-public boolean pickaxe = false;
-public boolean key = false;
-public boolean holdingSomething = false;
-public int speed = 3;
-public int distance = 30;
-public boolean touching = false;
-public int mobTimer = 100;
-/**
- * Act - do whatever the kingBlob wants to do. This method is called whenever
- * the 'Act' or 'Run' button gets pressed in the environment.
- */
-public void act() 
-{
-    // Add your action code here.
-    if (!Elmos_World.e_pressed) {
-        move();
-    }
-    mobTimer--;
-    checkMobTimer();
-    checkMobs();
-    countDown--;
-    countDown1--;
-    if(countDown1 <= 0) {
-        action();
-        countDown1 = 10;
-    }
-    if(isTouching(Sword.class)) {
-        //store_inven("sword", Elmos_World.e_pressed);
-    }
-    else{
-        sword = false;
-    }
-    if (isTouching(Pickaxe.class)) {
-        //store_inven("pickaxe");
-    }
-    else {
-        pickaxe = false;
-    }
-    if (isTouching(Key.class)) {
-        //store_inven("key");
-    }
-    else {
-        key = false;
-    }
-}    
+    public int health = 100;
+    private int mobTimer = 40;
+    public int actionTimer = 10;
+    public static Actor i_value1 = null;
+    public static Actor i_value2 = null;
+    public static Actor i_value3 = null;
+    public boolean sword = false;
+    public boolean pickaxe = false;
+    public boolean key = false;
+    public boolean holdingSomething = false;
+    public int speed = 3;
+    public int distance = 30;
+    public boolean touching = false;
+    /**
+     * Act - do whatever the kingBlob wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        if (!Elmos_World.e_pressed) {
+            move();
+        }
+        checkMobs();
+        mobTimer--;
+        actionTimer--;
+        if(actionTimer <= 0) {
+            action();
+            actionTimer = 10;
+        }
+        if(!isTouching(Sword.class)) {
+            sword = false;
+        }
+        if (!isTouching(Pickaxe.class)) {
+            pickaxe = false;
+        }
+        if (!isTouching(Key.class)) {
+            key = false;
+        }
+    }    
     
     public void action() {
         if(Greenfoot.isKeyDown("f")) {
@@ -99,80 +86,71 @@ public void act()
             setLocation(getX(), getY()+2*1);
         }
     }
-    public void checkMobTimer(){
-        if (mobTimer <= 0){
-            mobTimer = 250;
-            Mob_1 m1 = new Mob_1();
-            Mob_1 m2 = new Mob_1();
-            Mob_1 m3 = new Mob_1();
-        }
-    }
     public void checkMobs() {
-        if(countDown <= 0) {
+        if(mobTimer <= 0) {
             if(isTouching(Mob_1.class)) {
                 health -= 5;
                 checkHealth();
-                countDown = 40;
+                mobTimer = 40;
             }   
         }
-        
     }
-    public void rearrangeYourselfImmediately1(String direction) {
-        if(direction.equals("left")){
-            ((Elmos_World)getWorld()).removeObject(i_value1);
-            getWorld().addObject(i_value1, getX()+27, getY()-(3*Elmos_World.i1.getImage().getHeight()));
-        }
-        if(direction.equals("right")){
-            ((Elmos_World)getWorld()).removeObject(i_value1);
-            getWorld().addObject(i_value1, getX()+33, getY()-(3*Elmos_World.i1.getImage().getHeight()));
-        }
-        if(direction.equals("down")){
-            ((Elmos_World)getWorld()).removeObject(i_value1);
-            getWorld().addObject(i_value1, getX()+distance, getY()-(3*Elmos_World.i1.getImage().getHeight())+3);
-        }
-        if(direction.equals("up")){
-            ((Elmos_World)getWorld()).removeObject(i_value1);
-            getWorld().addObject(i_value1, getX()+distance, getY()-(3*Elmos_World.i1.getImage().getHeight())-3);
-        }
-    }
+    // public void rearrangeYourselfImmediately1(String direction) {
+        // if(direction.equals("left")){
+            // ((Elmos_World)getWorld()).removeObject(i_value1);
+            // getWorld().addObject(i_value1, getX()+27, getY()-(3*Elmos_World.i1.getImage().getHeight()));
+        // }
+        // if(direction.equals("right")){
+            // ((Elmos_World)getWorld()).removeObject(i_value1);
+            // getWorld().addObject(i_value1, getX()+33, getY()-(3*Elmos_World.i1.getImage().getHeight()));
+        // }
+        // if(direction.equals("down")){
+            // ((Elmos_World)getWorld()).removeObject(i_value1);
+            // getWorld().addObject(i_value1, getX()+distance, getY()-(3*Elmos_World.i1.getImage().getHeight())+3);
+        // }
+        // if(direction.equals("up")){
+            // ((Elmos_World)getWorld()).removeObject(i_value1);
+            // getWorld().addObject(i_value1, getX()+distance, getY()-(3*Elmos_World.i1.getImage().getHeight())-3);
+        // }
+    // }
     
-    public void rearrangeYourselfImmediately2(String direction) {
-        if(direction.equals("left")){
-            ((Elmos_World)getWorld()).removeObject(i_value2);
-            getWorld().addObject(i_value2, getX()+27, getY()-(2*Elmos_World.i2.getImage().getHeight()));
-        }
-        if(direction.equals("right")){
-            ((Elmos_World)getWorld()).removeObject(i_value2);
-            getWorld().addObject(i_value2, getX()+33, getY()-(2*Elmos_World.i2.getImage().getHeight()));
-        }
-        if(direction.equals("down")){
-            ((Elmos_World)getWorld()).removeObject(i_value2);
-            getWorld().addObject(i_value2, getX()+30, getY()-(2*Elmos_World.i2.getImage().getHeight())+3);
-        }
-        if(direction.equals("up")){
-            ((Elmos_World)getWorld()).removeObject(i_value2);
-            getWorld().addObject(i_value2, getX()+30, getY()-(2*Elmos_World.i2.getImage().getHeight())-3);
-        }
-    }
+    // public void rearrangeYourselfImmediately2(String direction) {
+        // if(direction.equals("left")){
+            // ((Elmos_World)getWorld()).removeObject(i_value2);
+            // getWorld().addObject(i_value2, getX()+27, getY()-(2*Elmos_World.i2.getImage().getHeight()));
+        // }
+        // if(direction.equals("right")){
+            // ((Elmos_World)getWorld()).removeObject(i_value2);
+            // getWorld().addObject(i_value2, getX()+33, getY()-(2*Elmos_World.i2.getImage().getHeight()));
+        // }
+        // if(direction.equals("down")){
+            // ((Elmos_World)getWorld()).removeObject(i_value2);
+            // getWorld().addObject(i_value2, getX()+30, getY()-(2*Elmos_World.i2.getImage().getHeight())+3);
+        // }
+        // if(direction.equals("up")){
+            // ((Elmos_World)getWorld()).removeObject(i_value2);
+            // getWorld().addObject(i_value2, getX()+30, getY()-(2*Elmos_World.i2.getImage().getHeight())-3);
+        // }
+    // }
     
-    public void rearrangeYourselfImmediately3(String direction) {
-        if(direction.equals("left")){
-            ((Elmos_World)getWorld()).removeObject(i_value3);
-            getWorld().addObject(i_value3, getX()+27, getY()-(1*Elmos_World.i2.getImage().getHeight()));
-        }
-        if(direction.equals("right")){
-            ((Elmos_World)getWorld()).removeObject(i_value3);
-            getWorld().addObject(i_value3, getX()+33, getY()-(1*Elmos_World.i2.getImage().getHeight()));
-        }
-        if(direction.equals("down")){
-            ((Elmos_World)getWorld()).removeObject(i_value3);
-            getWorld().addObject(i_value3, getX()+distance, getY()-(1*Elmos_World.i2.getImage().getHeight())+3);
-        }
-        if(direction.equals("up")){
-            ((Elmos_World)getWorld()).removeObject(i_value3);
-            getWorld().addObject(i_value3, getX()+distance, getY()-(1*Elmos_World.i2.getImage().getHeight())-3);
-        }
-    }
+    // public void rearrangeYourselfImmediately3(String direction) {
+        // if(direction.equals("left")){
+            // ((Elmos_World)getWorld()).removeObject(i_value3);
+            // getWorld().addObject(i_value3, getX()+27, getY()-(1*Elmos_World.i2.getImage().getHeight()));
+        // }
+        // if(direction.equals("right")){
+            // ((Elmos_World)getWorld()).removeObject(i_value3);
+            // getWorld().addObject(i_value3, getX()+33, getY()-(1*Elmos_World.i2.getImage().getHeight()));
+        // }
+        // if(direction.equals("down")){
+            // ((Elmos_World)getWorld()).removeObject(i_value3);
+            // getWorld().addObject(i_value3, getX()+distance, getY()-(1*Elmos_World.i2.getImage().getHeight())+3);
+        // }
+        // if(direction.equals("up")){
+            // ((Elmos_World)getWorld()).removeObject(i_value3);
+            // getWorld().addObject(i_value3, getX()+distance, getY()-(1*Elmos_World.i2.getImage().getHeight())-3);
+        // }
+    // }
     
     public void checkHealth() {
         if(health <= 0) {
@@ -182,8 +160,9 @@ public void act()
     }
     
     public void attack() {
-        if(i_value1.getWorld() != null && touching && countDown <= 0) {
-            countDown = 35;
+        if (isTouching(Mob_1.class)){
+            removeTouching(Mob_1.class);
+            health += 5;
         }
     }
     
@@ -193,6 +172,16 @@ public void act()
             therock whe = (therock)(getOneIntersectingObject(therock.class));
             ((Elmos_World)getWorld()).addObject(key, whe.getX(), whe.getY());
             removeTouching(therock.class);
+        }
+        if (isTouching(Rock.class)){
+            Rock whe = (Rock)(getOneIntersectingObject(Rock.class));
+            Mob_1 m1 = new Mob_1();
+            ((Elmos_World)getWorld()).addObject(m1, whe.getX(), whe.getY());
+            Mob_1 m2 = new Mob_1();
+            ((Elmos_World)getWorld()).addObject(m2, whe.getX(), whe.getY());
+            Mob_1 m3 = new Mob_1();
+            ((Elmos_World)getWorld()).addObject(m3, whe.getX(), whe.getY());
+            removeTouching(Rock.class);
         }
     }
     
