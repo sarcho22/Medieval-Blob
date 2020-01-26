@@ -77,7 +77,7 @@ public class Elmos_World extends World
     
     public void nextLevel() {
         if(currentLevel > maxLevel) {
-            showText("Great Job! You finished " + currentLevel + " levels!", 375, 200);
+            showText("Great Job! You finished all " + currentLevel + " levels!", 375, 200);
         }
         else{
             showText("Level: " + (currentLevel + 1), 35, 25);

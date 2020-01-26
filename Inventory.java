@@ -16,7 +16,7 @@ public class Inventory extends Actor
     public boolean isSword = false;
     public boolean isKey = false;
     public boolean isEmpty = true;
-    public String identity;
+    public String identity = "";
     
     public void act() 
     {
@@ -40,17 +40,23 @@ public class Inventory extends Actor
             isKey = false;
             isEmpty = false;
         }
-        if(current == "pickaxe") {
+        else if(current == "pickaxe") {
             isSword = false;
             isPickaxe = true;
             isKey = false;
             isEmpty = false;
         }
-        if(current == "key") {
+        else if(current == "key") {
             isSword = false;
             isPickaxe = false;
             isKey = true;
             isEmpty = false;
+        }
+        else{
+            isSword = false;
+            isPickaxe = false;
+            isKey = false;
+            isEmpty = true;
         }
         identity = current;
     }

@@ -42,7 +42,7 @@ public class Sword extends Actor
                 pickedUp = true;
             }
             if (timer <= 0 && !Elmos_World.i1.isSword) {
-                setLocation(5000, 5000);
+                setLocation(-5000, -5000);
             }
         }
         if (Elmos_World.e_pressed && !something_normal && ever_touched){
@@ -50,7 +50,6 @@ public class Sword extends Actor
                     ((Elmos_World)getWorld()).addObject(i, Elmos_World.me.getX()+30, Elmos_World.me.getY()-(3*Elmos_World.i1.getImage().getHeight()));
                 }
                 else if(Elmos_World.i2.isSword) {
-                    getWorld().showText("i2?", 100, 200);
                     ((Elmos_World)getWorld()).addObject(i, Elmos_World.me.getX()+30, Elmos_World.me.getY()-(2*Elmos_World.i1.getImage().getHeight()));
                 }
                 else if(Elmos_World.i3.isSword) {

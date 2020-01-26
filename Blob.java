@@ -187,6 +187,18 @@ public class Blob extends Actor
     
     public void unlock() {
         if (isTouching(Door.class)){
+            if(Elmos_World.i1.identity.equals("key")) {
+                Elmos_World.i1.identity = "";
+                Elmos_World.i1.turnOff("empty!");
+            }
+            if(Elmos_World.i2.identity.equals("key")) {
+                Elmos_World.i2.identity = "";
+                Elmos_World.i2.turnOff("empty!");
+            }
+            if(Elmos_World.i3.identity.equals("key")) {
+                Elmos_World.i3.identity = "";
+                Elmos_World.i3.turnOff("empty!");
+            }
             removeTouching(Key.class);
             ((Elmos_World)getWorld()).nextLevel();
         }
