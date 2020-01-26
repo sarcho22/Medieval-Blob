@@ -9,11 +9,7 @@ class.Key_Image.image=final_key.png
 class.Mob_1.image=blob_monster_resized.png
 class.Pickaxe.image=pickaxe.png
 class.Pickaxe_Image.image=pickaxe.png
-<<<<<<< HEAD
-class.Sarah_world.image=space1.jpg
-=======
 class.Rock.image=images_transparent.png
->>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 class.Sword.image=sword.png
 class.Sword_Image.image=sword.png
 class.therock.image=images_transparent.png
@@ -23,16 +19,6 @@ dependency1.type=UsesDependency
 dependency10.from=Elmos_World
 dependency10.to=Sword_Image
 dependency10.type=UsesDependency
-<<<<<<< HEAD
-dependency11.from=Blob
-dependency11.to=Sword
-dependency11.type=UsesDependency
-dependency12.from=Blob
-dependency12.to=Pickaxe
-dependency12.type=UsesDependency
-dependency13.from=Blob
-dependency13.to=Key
-=======
 dependency11.from=Elmos_World
 dependency11.to=Pickaxe_Image
 dependency11.type=UsesDependency
@@ -41,27 +27,13 @@ dependency12.to=Key_Image
 dependency12.type=UsesDependency
 dependency13.from=Blob
 dependency13.to=Elmos_World
->>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 dependency13.type=UsesDependency
 dependency14.from=Blob
-dependency14.to=Mob_1
+dependency14.to=Key
 dependency14.type=UsesDependency
-dependency15.from=Mob_1
-dependency15.to=Elmos_World
+dependency15.from=Blob
+dependency15.to=therock
 dependency15.type=UsesDependency
-<<<<<<< HEAD
-dependency16.from=Pickaxe
-dependency16.to=Pickaxe_Image
-dependency16.type=UsesDependency
-dependency17.from=Pickaxe
-dependency17.to=Elmos_World
-dependency17.type=UsesDependency
-dependency18.from=Pickaxe
-dependency18.to=Blob
-dependency18.type=UsesDependency
-dependency19.from=Sword
-dependency19.to=Sword_Image
-=======
 dependency16.from=Blob
 dependency16.to=Rock
 dependency16.type=UsesDependency
@@ -73,28 +45,10 @@ dependency18.to=Sword
 dependency18.type=UsesDependency
 dependency19.from=Blob
 dependency19.to=Pickaxe
->>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 dependency19.type=UsesDependency
 dependency2.from=Elmos_World
 dependency2.to=Blob
 dependency2.type=UsesDependency
-<<<<<<< HEAD
-dependency20.from=Sword
-dependency20.to=Elmos_World
-dependency20.type=UsesDependency
-dependency21.from=Sword
-dependency21.to=Blob
-dependency21.type=UsesDependency
-dependency22.from=Key
-dependency22.to=Key_Image
-dependency22.type=UsesDependency
-dependency23.from=Key
-dependency23.to=Elmos_World
-dependency23.type=UsesDependency
-dependency24.from=Key
-dependency24.to=Blob
-dependency24.type=UsesDependency
-=======
 dependency20.from=Blob
 dependency20.to=Door
 dependency20.type=UsesDependency
@@ -125,9 +79,8 @@ dependency28.type=UsesDependency
 dependency29.from=Key
 dependency29.to=Elmos_World
 dependency29.type=UsesDependency
->>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 dependency3.from=Elmos_World
-dependency3.to=Sword
+dependency3.to=Border
 dependency3.type=UsesDependency
 dependency30.from=Key
 dependency30.to=Blob
@@ -139,11 +92,7 @@ dependency5.from=Elmos_World
 dependency5.to=Key
 dependency5.type=UsesDependency
 dependency6.from=Elmos_World
-<<<<<<< HEAD
-dependency6.to=Border
-=======
 dependency6.to=Door
->>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 dependency6.type=UsesDependency
 dependency7.from=Elmos_World
 dependency7.to=therock
@@ -154,21 +103,12 @@ dependency8.type=UsesDependency
 dependency9.from=Elmos_World
 dependency9.to=Sword
 dependency9.type=UsesDependency
-<<<<<<< HEAD
-editor.fx.0.height=27
-editor.fx.0.width=159
-editor.fx.0.x=-25600
-editor.fx.0.y=-25600
-height=743
-package.numDependencies=24
-=======
-editor.fx.0.height=737
-editor.fx.0.width=813
-editor.fx.0.x=171
-editor.fx.0.y=12
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
 height=744
 package.numDependencies=30
->>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 package.numTargets=18
 project.charset=windows-1252
 publish.hasSource=false
@@ -192,27 +132,13 @@ target1.width=80
 target1.x=0
 target1.y=0
 target10.height=50
-<<<<<<< HEAD
-target10.name=penel_world
-=======
 target10.name=Sarah_world
->>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 target10.showInterface=false
 target10.type=ClassTarget
 target10.width=90
 target10.x=0
 target10.y=0
 target11.height=50
-<<<<<<< HEAD
-target11.name=therock
-target11.showInterface=false
-target11.type=ClassTarget
-target11.width=80
-target11.x=0
-target11.y=0
-target12.height=50
-target12.name=Sasha_world
-=======
 target11.name=penel_world
 target11.showInterface=false
 target11.type=ClassTarget
@@ -221,37 +147,12 @@ target11.x=0
 target11.y=0
 target12.height=50
 target12.name=therock
->>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 target12.showInterface=false
 target12.type=ClassTarget
 target12.width=90
 target12.x=0
 target12.y=0
 target13.height=50
-<<<<<<< HEAD
-target13.name=Border
-target13.showInterface=false
-target13.type=ClassTarget
-target13.width=80
-target13.x=0
-target13.y=0
-target14.height=50
-target14.name=Inventory
-target14.showInterface=false
-target14.type=ClassTarget
-target14.width=110
-target14.x=0
-target14.y=0
-target15.height=50
-target15.name=Key
-target15.showInterface=false
-target15.type=ClassTarget
-target15.width=80
-target15.x=0
-target15.y=0
-target16.height=50
-target16.name=MyWorld
-=======
 target13.name=Sasha_world
 target13.showInterface=false
 target13.type=ClassTarget
@@ -274,7 +175,6 @@ target15.x=0
 target15.y=0
 target16.height=50
 target16.name=Key
->>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 target16.showInterface=false
 target16.type=ClassTarget
 target16.width=80
@@ -337,14 +237,10 @@ target7.width=90
 target7.x=0
 target7.y=0
 target8.height=50
-<<<<<<< HEAD
-target8.name=Sarah_world
-=======
 target8.name=Key_Image
->>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 target8.showInterface=false
 target8.type=ClassTarget
-target8.width=90
+target8.width=80
 target8.x=0
 target8.y=0
 target9.height=50
@@ -355,11 +251,7 @@ target9.width=90
 target9.x=0
 target9.y=0
 version=3.0.0
-<<<<<<< HEAD
-width=1016
-=======
 width=1382
->>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 world.lastInstantiated=Elmos_World
-xPosition=42
-yPosition=16
+xPosition=0
+yPosition=0
