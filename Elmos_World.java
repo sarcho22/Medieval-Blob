@@ -26,8 +26,7 @@ public class Elmos_World extends World
         addObject(new Border(), 1 * 500, 0);
         addObject(new Border(), 0, getHeight());
         addObject(new Border(), 1 * 500, getHeight());
-        showText("Welcome to Medieval Blob.", 375, 200);
-        showText("Press 'Enter' to begin!", 375, 215);
+        nextLevel();
     }
 
     public void act() {
@@ -44,11 +43,6 @@ public class Elmos_World extends World
         actionTimer--;
         if (currentLevel > 0){
             showText("Health: " + me.health, 690, 25);
-        }
-        if (Greenfoot.isKeyDown("enter") && currentLevel == 0){
-            showText("", 375, 200);
-            showText("", 375, 215);
-            nextLevel();
         }
     }
 
