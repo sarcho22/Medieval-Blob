@@ -9,7 +9,7 @@ class.Key_Image.image=final_key.png
 class.Mob_1.image=blob_monster_resized.png
 class.Pickaxe.image=pickaxe.png
 class.Pickaxe_Image.image=pickaxe.png
-class.Rock.image=images_transparent.png
+class.Sarah_world.image=space1.jpg
 class.Sword.image=sword.png
 class.Sword_Image.image=sword.png
 class.therock.image=images_transparent.png
@@ -103,11 +103,19 @@ dependency8.type=UsesDependency
 dependency9.from=Elmos_World
 dependency9.to=Sword
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=739
 editor.fx.0.width=816
 editor.fx.0.x=275
 editor.fx.0.y=10
 height=784
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+height=743
+>>>>>>> 631b7b3efbeb9086f25d23cae47e1642a2e302a8
 package.numDependencies=30
 package.numTargets=14
 project.charset=windows-1252
@@ -123,7 +131,7 @@ readme.name=@README
 readme.width=47
 readme.x=10
 readme.y=10
-simulation.speed=49
+simulation.speed=52
 target1.height=50
 target1.name=Blob
 target1.showInterface=false
@@ -149,7 +157,11 @@ target12.height=50
 target12.name=Inventory
 target12.showInterface=false
 target12.type=ClassTarget
+<<<<<<< HEAD
 target12.width=110
+=======
+target12.width=80
+>>>>>>> 631b7b3efbeb9086f25d23cae47e1642a2e302a8
 target12.x=0
 target12.y=0
 target13.height=50
@@ -219,11 +231,11 @@ target9.height=50
 target9.name=Sword
 target9.showInterface=false
 target9.type=ClassTarget
-target9.width=90
+target9.width=80
 target9.x=0
 target9.y=0
 version=3.0.0
-width=1382
+width=1016
 world.lastInstantiated=Elmos_World
-xPosition=0
-yPosition=0
+xPosition=42
+yPosition=16
