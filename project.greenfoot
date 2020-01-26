@@ -1,6 +1,7 @@
 #Greenfoot project file
 class.Blob.image=probably_blob.png
 class.Border.image=border.png
+class.Door.image=door.jpg
 class.Elmos_World.image=floor.jpg
 class.Inventory.image=inventory-box.png
 class.Key.image=final_key.png
@@ -8,16 +9,21 @@ class.Key_Image.image=final_key.png
 class.Mob_1.image=blob_monster_resized.png
 class.Pickaxe.image=pickaxe.png
 class.Pickaxe_Image.image=pickaxe.png
+<<<<<<< HEAD
 class.Sarah_world.image=space1.jpg
+=======
+class.Rock.image=images_transparent.png
+>>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 class.Sword.image=sword.png
 class.Sword_Image.image=sword.png
 class.therock.image=images_transparent.png
 dependency1.from=Elmos_World
 dependency1.to=Inventory
 dependency1.type=UsesDependency
-dependency10.from=Blob
-dependency10.to=Elmos_World
+dependency10.from=Elmos_World
+dependency10.to=Sword_Image
 dependency10.type=UsesDependency
+<<<<<<< HEAD
 dependency11.from=Blob
 dependency11.to=Sword
 dependency11.type=UsesDependency
@@ -26,6 +32,16 @@ dependency12.to=Pickaxe
 dependency12.type=UsesDependency
 dependency13.from=Blob
 dependency13.to=Key
+=======
+dependency11.from=Elmos_World
+dependency11.to=Pickaxe_Image
+dependency11.type=UsesDependency
+dependency12.from=Elmos_World
+dependency12.to=Key_Image
+dependency12.type=UsesDependency
+dependency13.from=Blob
+dependency13.to=Elmos_World
+>>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 dependency13.type=UsesDependency
 dependency14.from=Blob
 dependency14.to=Mob_1
@@ -33,6 +49,7 @@ dependency14.type=UsesDependency
 dependency15.from=Mob_1
 dependency15.to=Elmos_World
 dependency15.type=UsesDependency
+<<<<<<< HEAD
 dependency16.from=Pickaxe
 dependency16.to=Pickaxe_Image
 dependency16.type=UsesDependency
@@ -44,10 +61,24 @@ dependency18.to=Blob
 dependency18.type=UsesDependency
 dependency19.from=Sword
 dependency19.to=Sword_Image
+=======
+dependency16.from=Blob
+dependency16.to=Rock
+dependency16.type=UsesDependency
+dependency17.from=Blob
+dependency17.to=Mob_1
+dependency17.type=UsesDependency
+dependency18.from=Blob
+dependency18.to=Sword
+dependency18.type=UsesDependency
+dependency19.from=Blob
+dependency19.to=Pickaxe
+>>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 dependency19.type=UsesDependency
 dependency2.from=Elmos_World
 dependency2.to=Blob
 dependency2.type=UsesDependency
+<<<<<<< HEAD
 dependency20.from=Sword
 dependency20.to=Elmos_World
 dependency20.type=UsesDependency
@@ -63,9 +94,44 @@ dependency23.type=UsesDependency
 dependency24.from=Key
 dependency24.to=Blob
 dependency24.type=UsesDependency
+=======
+dependency20.from=Blob
+dependency20.to=Door
+dependency20.type=UsesDependency
+dependency21.from=Mob_1
+dependency21.to=Elmos_World
+dependency21.type=UsesDependency
+dependency22.from=Pickaxe
+dependency22.to=Pickaxe_Image
+dependency22.type=UsesDependency
+dependency23.from=Pickaxe
+dependency23.to=Elmos_World
+dependency23.type=UsesDependency
+dependency24.from=Pickaxe
+dependency24.to=Blob
+dependency24.type=UsesDependency
+dependency25.from=Sword
+dependency25.to=Sword_Image
+dependency25.type=UsesDependency
+dependency26.from=Sword
+dependency26.to=Elmos_World
+dependency26.type=UsesDependency
+dependency27.from=Sword
+dependency27.to=Blob
+dependency27.type=UsesDependency
+dependency28.from=Key
+dependency28.to=Key_Image
+dependency28.type=UsesDependency
+dependency29.from=Key
+dependency29.to=Elmos_World
+dependency29.type=UsesDependency
+>>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 dependency3.from=Elmos_World
 dependency3.to=Sword
 dependency3.type=UsesDependency
+dependency30.from=Key
+dependency30.to=Blob
+dependency30.type=UsesDependency
 dependency4.from=Elmos_World
 dependency4.to=Pickaxe
 dependency4.type=UsesDependency
@@ -73,23 +139,36 @@ dependency5.from=Elmos_World
 dependency5.to=Key
 dependency5.type=UsesDependency
 dependency6.from=Elmos_World
+<<<<<<< HEAD
 dependency6.to=Border
+=======
+dependency6.to=Door
+>>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 dependency6.type=UsesDependency
 dependency7.from=Elmos_World
-dependency7.to=Sword_Image
+dependency7.to=therock
 dependency7.type=UsesDependency
 dependency8.from=Elmos_World
-dependency8.to=Pickaxe_Image
+dependency8.to=Rock
 dependency8.type=UsesDependency
 dependency9.from=Elmos_World
-dependency9.to=Key_Image
+dependency9.to=Sword
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=27
 editor.fx.0.width=159
 editor.fx.0.x=-25600
 editor.fx.0.y=-25600
 height=743
 package.numDependencies=24
+=======
+editor.fx.0.height=737
+editor.fx.0.width=813
+editor.fx.0.x=171
+editor.fx.0.y=12
+height=744
+package.numDependencies=30
+>>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 package.numTargets=18
 project.charset=windows-1252
 publish.hasSource=false
@@ -104,7 +183,7 @@ readme.name=@README
 readme.width=47
 readme.x=10
 readme.y=10
-simulation.speed=52
+simulation.speed=49
 target1.height=50
 target1.name=Blob
 target1.showInterface=false
@@ -113,13 +192,18 @@ target1.width=80
 target1.x=0
 target1.y=0
 target10.height=50
+<<<<<<< HEAD
 target10.name=penel_world
+=======
+target10.name=Sarah_world
+>>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 target10.showInterface=false
 target10.type=ClassTarget
 target10.width=90
 target10.x=0
 target10.y=0
 target11.height=50
+<<<<<<< HEAD
 target11.name=therock
 target11.showInterface=false
 target11.type=ClassTarget
@@ -128,12 +212,23 @@ target11.x=0
 target11.y=0
 target12.height=50
 target12.name=Sasha_world
+=======
+target11.name=penel_world
+target11.showInterface=false
+target11.type=ClassTarget
+target11.width=90
+target11.x=0
+target11.y=0
+target12.height=50
+target12.name=therock
+>>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 target12.showInterface=false
 target12.type=ClassTarget
 target12.width=90
 target12.x=0
 target12.y=0
 target13.height=50
+<<<<<<< HEAD
 target13.name=Border
 target13.showInterface=false
 target13.type=ClassTarget
@@ -156,6 +251,30 @@ target15.x=0
 target15.y=0
 target16.height=50
 target16.name=MyWorld
+=======
+target13.name=Sasha_world
+target13.showInterface=false
+target13.type=ClassTarget
+target13.width=90
+target13.x=0
+target13.y=0
+target14.height=50
+target14.name=Border
+target14.showInterface=false
+target14.type=ClassTarget
+target14.width=80
+target14.x=0
+target14.y=0
+target15.height=50
+target15.name=Inventory
+target15.showInterface=false
+target15.type=ClassTarget
+target15.width=110
+target15.x=0
+target15.y=0
+target16.height=50
+target16.name=Key
+>>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 target16.showInterface=false
 target16.type=ClassTarget
 target16.width=80
@@ -183,42 +302,46 @@ target2.width=80
 target2.x=0
 target2.y=0
 target3.height=50
-target3.name=Sword_Image
+target3.name=Rock
 target3.showInterface=false
 target3.type=ClassTarget
-target3.width=100
+target3.width=80
 target3.x=0
 target3.y=0
 target4.height=50
-target4.name=Pickaxe
+target4.name=Sword_Image
 target4.showInterface=false
 target4.type=ClassTarget
 target4.width=100
 target4.x=0
 target4.y=0
 target5.height=50
-target5.name=Door
+target5.name=Pickaxe
 target5.showInterface=false
 target5.type=ClassTarget
-target5.width=80
+target5.width=100
 target5.x=0
 target5.y=0
 target6.height=50
-target6.name=Elmos_World
+target6.name=Door
 target6.showInterface=false
 target6.type=ClassTarget
-target6.width=90
+target6.width=80
 target6.x=0
 target6.y=0
 target7.height=50
-target7.name=Key_Image
+target7.name=Elmos_World
 target7.showInterface=false
 target7.type=ClassTarget
-target7.width=80
+target7.width=90
 target7.x=0
 target7.y=0
 target8.height=50
+<<<<<<< HEAD
 target8.name=Sarah_world
+=======
+target8.name=Key_Image
+>>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=90
@@ -228,11 +351,15 @@ target9.height=50
 target9.name=Sword
 target9.showInterface=false
 target9.type=ClassTarget
-target9.width=80
+target9.width=90
 target9.x=0
 target9.y=0
 version=3.0.0
+<<<<<<< HEAD
 width=1016
+=======
+width=1382
+>>>>>>> 40c283ab2e389637440f2892a55497b54c3e5681
 world.lastInstantiated=Elmos_World
 xPosition=42
 yPosition=16

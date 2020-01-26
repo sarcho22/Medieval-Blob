@@ -20,18 +20,13 @@ public class Pickaxe extends Actor
     
     public void act() 
     {
-        // Add your action code here.
         if (Elmos_World.i1.isPickaxe) {
             setLocation(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, Elmos_World.me.getY()-10);
         }
         if(isTouching(Blob.class)) {
             setLocation(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, Elmos_World.me.getY()-10);
             Pickaxe_Image i = new Pickaxe_Image();
-            //if e pressed, add this and later get rid of calling store_inven thing idk
-            //getWorld().addObject(i, 100, 100);
-            
             ever_touched = true;
-            // Sword_Image i = new Sword_Image();
             timer--;
             if (!pickedUp) {
                 if (Elmos_World.i1.isEmpty) {
@@ -50,8 +45,6 @@ public class Pickaxe extends Actor
             }
         }
         if (Elmos_World.e_pressed && !something_normal && ever_touched){
-                // e_pressed is the issue!!!!!!
-                
                 if(Elmos_World.i1.isPickaxe) {
                     ((Elmos_World)getWorld()).addObject(i, Elmos_World.me.getX()+30, Elmos_World.me.getY()-(3*Elmos_World.i1.getImage().getHeight()));
                 }

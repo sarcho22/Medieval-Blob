@@ -23,15 +23,11 @@ public class Sword extends Actor
         if (Elmos_World.i1.isSword) {
             setLocation(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, Elmos_World.me.getY()-10);
         }
-        check();
+        //check();
         if(isTouching(Blob.class)) {
             setLocation(Elmos_World.me.getX()+Elmos_World.me.getImage().getWidth()/2, Elmos_World.me.getY()-10);
             Sword_Image i = new Sword_Image();
-            //if e pressed, add this and later get rid of calling store_inven thing idk
-            //getWorld().addObject(i, 100, 100);
-            
             ever_touched = true;
-            // Sword_Image i = new Sword_Image();
             timer--;
             if (!pickedUp) {
                 if (Elmos_World.i1.isEmpty) {
@@ -46,16 +42,14 @@ public class Sword extends Actor
                 pickedUp = true;
             }
             if (timer <= 0 && !Elmos_World.i1.isSword) {
-                setLocation(5000, 5000);
+                setLocation(-5000, -5000);
             }
         }
         if (Elmos_World.e_pressed && !something_normal && ever_touched){
-                // e_pressed is the issue!!!!!!
                 if(Elmos_World.i1.isSword) {
                     ((Elmos_World)getWorld()).addObject(i, Elmos_World.me.getX()+30, Elmos_World.me.getY()-(3*Elmos_World.i1.getImage().getHeight()));
                 }
                 else if(Elmos_World.i2.isSword) {
-                    getWorld().showText("i2?", 100, 200);
                     ((Elmos_World)getWorld()).addObject(i, Elmos_World.me.getX()+30, Elmos_World.me.getY()-(2*Elmos_World.i1.getImage().getHeight()));
                 }
                 else if(Elmos_World.i3.isSword) {
@@ -71,12 +65,12 @@ public class Sword extends Actor
         }
         
     } 
-    public boolean check() {
-        if(isTouching(Mob_1.class)) {
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
+    // public boolean check() {
+        // if(isTouching(Mob_1.class)) {
+            // return true;
+        // }
+        // else{
+            // return false;
+        // }
+    // }
 }
