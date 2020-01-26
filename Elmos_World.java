@@ -8,11 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Elmos_World extends World
 {
-    public static Inventory i1 = new Inventory();
-    public static Inventory i2 = new Inventory();
-    public static Inventory i3 = new Inventory();
-    public static Blob me = new Blob();
-    public static boolean e_pressed = false;
+    public Inventory i1 = new Inventory();
+    public Inventory i2 = new Inventory();
+    public Inventory i3 = new Inventory();
+    public Blob me = new Blob();
+    public boolean e_pressed = false;
     private int actionTimer = 10;
     public int currentLevel = 0;
     public int maxLevel = 3;

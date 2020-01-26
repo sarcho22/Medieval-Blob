@@ -27,7 +27,7 @@ public class Blob extends Actor
      */
     public void act() 
     {
-        if (!Elmos_World.e_pressed) {
+        if (!((Elmos_World)getWorld()).e_pressed) {
             move();
         }
         checkMobs();
@@ -50,25 +50,25 @@ public class Blob extends Actor
     
     public void action() {
         if(Greenfoot.isKeyDown("f")) {
-            if(Elmos_World.i1.isSword) {
+            if(((Elmos_World)getWorld()).i1.isSword) {
                 attack();
             }
-            if(Elmos_World.i1.isPickaxe) {
+            if(((Elmos_World)getWorld()).i1.isPickaxe) {
                 mine();
             }
-            if(Elmos_World.i1.isKey) {
+            if(((Elmos_World)getWorld()).i1.isKey) {
                 unlock();
             }
         }
-        if(Greenfoot.isKeyDown("2") && !Elmos_World.i2.isEmpty){
-            String temp = Elmos_World.i1.identity;
-            Elmos_World.i1.turnOff(Elmos_World.i2.identity);
-            Elmos_World.i2.turnOff(temp);
+        if(Greenfoot.isKeyDown("2") && !((Elmos_World)getWorld()).i2.isEmpty){
+            String temp = ((Elmos_World)getWorld()).i1.identity;
+            ((Elmos_World)getWorld()).i1.turnOff(((Elmos_World)getWorld()).i2.identity);
+            ((Elmos_World)getWorld()).i2.turnOff(temp);
         }
-        if(Greenfoot.isKeyDown("3") && !Elmos_World.i3.isEmpty){
-            String temp = Elmos_World.i1.identity;
-            Elmos_World.i1.turnOff(Elmos_World.i3.identity);
-            Elmos_World.i3.turnOff(temp);
+        if(Greenfoot.isKeyDown("3") && !((Elmos_World)getWorld()).i3.isEmpty){
+            String temp = ((Elmos_World)getWorld()).i1.identity;
+            ((Elmos_World)getWorld()).i1.turnOff(((Elmos_World)getWorld()).i3.identity);
+            ((Elmos_World)getWorld()).i3.turnOff(temp);
         }
     }
     
@@ -187,17 +187,17 @@ public class Blob extends Actor
     
     public void unlock() {
         if (isTouching(Door.class)){
-            if(Elmos_World.i1.identity.equals("key")) {
-                Elmos_World.i1.identity = "";
-                Elmos_World.i1.turnOff("empty!");
+            if(((Elmos_World)getWorld()).i1.identity.equals("key")) {
+                ((Elmos_World)getWorld()).i1.identity = "";
+                ((Elmos_World)getWorld()).i1.turnOff("empty!");
             }
-            if(Elmos_World.i2.identity.equals("key")) {
-                Elmos_World.i2.identity = "";
-                Elmos_World.i2.turnOff("empty!");
+            if(((Elmos_World)getWorld()).i2.identity.equals("key")) {
+                ((Elmos_World)getWorld()).i2.identity = "";
+                ((Elmos_World)getWorld()).i2.turnOff("empty!");
             }
-            if(Elmos_World.i3.identity.equals("key")) {
-                Elmos_World.i3.identity = "";
-                Elmos_World.i3.turnOff("empty!");
+            if(((Elmos_World)getWorld()).i3.identity.equals("key")) {
+                ((Elmos_World)getWorld()).i3.identity = "";
+                ((Elmos_World)getWorld()).i3.turnOff("empty!");
             }
             removeTouching(Key.class);
             ((Elmos_World)getWorld()).nextLevel();
