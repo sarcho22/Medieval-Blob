@@ -201,6 +201,16 @@ public class Blob extends Actor
             ((Elmos_World)getWorld()).addObject(m3, whe.getX(), whe.getY());
             removeTouching(Rock.class);
         }
+        if (isTouching(Rock1.class)) {
+            Rock1 whe = (Rock1)(getOneIntersectingObject(Rock1.class));
+            Mob_1 m1 = new Mob_1();
+            ((Elmos_World)getWorld()).addObject(m1, whe.getX(), whe.getY());
+            Mob_1 m2 = new Mob_1();
+            ((Elmos_World)getWorld()).addObject(m2, whe.getX(), whe.getY());
+            Mob_2 m3 = new Mob_2();
+            ((Elmos_World)getWorld()).addObject(m3, whe.getX(), whe.getY());
+            removeTouching(Rock1.class);
+        }
     }
     
     public void unlock() {

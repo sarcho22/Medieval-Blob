@@ -16,7 +16,7 @@ public class Elmos_World extends World
     public boolean e_pressed = false;
     private int actionTimer = 10;
     public int currentLevel = 0;
-    public int maxLevel = 5;
+    public int maxLevel = 6;
 
     public Elmos_World()
     {    
@@ -95,6 +95,9 @@ public class Elmos_World extends World
                     level4();
                     break;
                 case 5:
+                    level5();
+                    break;
+                case 6:
                     maxLevelFunc();
                     break;
             }
@@ -128,9 +131,9 @@ public class Elmos_World extends World
     public void level3() {
         ArrayList<Actor> rawr = new ArrayList<Actor>(Arrays.asList(new Rock(), new Rock(),new therock()));
         
-        addObject(rawr.remove((int)Math.random()*rawr.size()), 221, 323);
-        addObject(rawr.remove((int)Math.random()*rawr.size()), 375, 435);
-        addObject(rawr.remove((int)Math.random()*rawr.size()), 633, 179);
+        addObject(rawr.remove((int)(Math.random()*rawr.size())), 221, 323);
+        addObject(rawr.remove((int)(Math.random()*rawr.size())), 375, 435);
+        addObject(rawr.remove((int)(Math.random()*rawr.size())), 633, 179);
         
         Sword sword = new Sword();
         addObject(sword,543,436);
@@ -149,16 +152,29 @@ public class Elmos_World extends World
         showText("", 375, 400);
         Door door = new Door();
         addObject(door, 750, 250);
-        int pos = door.getX() - door.getImage().getWidth()/2;
         
         ArrayList<Actor> rawr = new ArrayList<Actor>(Arrays.asList(new Rock(), new Rock(), new Rock(), new Rock(), new Rock(), new therock()));
         
-        addObject(rawr.remove((int)Math.random()*rawr.size()), 560, 38);
-        addObject(rawr.remove((int)Math.random()*rawr.size()), 348, 313);
-        addObject(rawr.remove((int)Math.random()*rawr.size()), 253, 257);
-        addObject(rawr.remove((int)Math.random()*rawr.size()), 692, 363);
-        addObject(rawr.remove((int)Math.random()*rawr.size()), 164, 157);
-        addObject(rawr.remove((int)Math.random()*rawr.size()), 467, 423);
+        addObject(rawr.remove((int)(Math.random()*rawr.size())), 560, 38);
+        addObject(rawr.remove((int)(Math.random()*rawr.size())), 348, 313);
+        addObject(rawr.remove((int)(Math.random()*rawr.size())), 253, 257);
+        addObject(rawr.remove((int)(Math.random()*rawr.size())), 692, 363);
+        addObject(rawr.remove((int)(Math.random()*rawr.size())), 164, 157);
+        addObject(rawr.remove((int)(Math.random()*rawr.size())), 467, 423);
+    }
+    
+    public void level5() {
+        Door door = new Door();
+        addObject(door, 750, 250);
+        ArrayList<Actor> rawr = new ArrayList<Actor>(Arrays.asList(new Rock(), new Rock(), new Rock(), new Rock(), new therock(), new Rock1(), new Rock1()));
+        
+        addObject(rawr.remove((int)(Math.random()*rawr.size())), 612, 310);
+        addObject(rawr.remove((int)(Math.random()*rawr.size())), 357, 219);
+        addObject(rawr.remove((int)(Math.random()*rawr.size())), 402, 108);
+        addObject(rawr.remove((int)(Math.random()*rawr.size())), 111, 383);
+        addObject(rawr.remove((int)(Math.random()*rawr.size())), 295, 410);
+        addObject(rawr.remove((int)(Math.random()*rawr.size())), 300, 170);
+        addObject(rawr.remove((int)(Math.random()*rawr.size())), 511, 199);
     }
     
     public void maxLevelFunc() {
