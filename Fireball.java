@@ -22,13 +22,12 @@ public class Fireball extends Actor
         else {
             move();
         }
-        
     }
     public void move() {
         int x = ((Elmos_World)getWorld()).me.getX();
         int y = ((Elmos_World)getWorld()).me.getY();
-        dy = (getY() - y) - ((getY() - y)/8);
-        dx = (getX() - x) - ((getX() - x)/8);
+        dy = 0-(getY() - y) - ((getY() - y)/1000);
+        dx = 0-(getX() - x) - ((getX() - x)/1000);
         setLocation(getX()+dx, getY()+dy);
     }
    

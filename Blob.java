@@ -100,6 +100,7 @@ public class Blob extends Actor
             if(isTouching(Fireball.class)) {
                 health -= 10;
                 checkHealth();
+                removeTouching(Fireball.class);
             }
             if (isTouching(Villain.class)) {
                 health -= 10;

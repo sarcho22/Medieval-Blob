@@ -38,18 +38,18 @@ public class Villain extends Actor
         }
         if (fireTimer <= 0) {
             Fireball f = new Fireball();
-            if (((Elmos_World)getWorld()).me.getX() <= getX()) {
-                f.dx = -2;
-            }
-            else {
-                f.dx = 2;
-            }
-            if (((Elmos_World)getWorld()).me.getY() <= getY()) {
-                f.dy = -2;
-            }
-            else {
-                f.dy = 2;
-            } 
+            // if (((Elmos_World)getWorld()).me.getX() <= getX()) {
+                // f.dx = -2;
+            // }
+            // else {
+                // f.dx = 2;
+            // }
+            // if (((Elmos_World)getWorld()).me.getY() <= getY()) {
+                // f.dy = -2;
+            // }
+            // else {
+                // f.dy = 2;
+            // } 
             ((Elmos_World)getWorld()).addObject(f, getX(), getY());
             fireTimer = 70;
         }
@@ -58,5 +58,7 @@ public class Villain extends Actor
             //write code to call the end of the game
         }
         ((Elmos_World)getWorld()).showText("Villain Health: " + health, getX(), getY()-50);
+        ((Elmos_World)getWorld()).showText("", getX(), getY()+50);
+        
     }  
 }
