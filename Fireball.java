@@ -19,11 +19,17 @@ public class Fireball extends Actor
         if (getX() <= 0 || getX() >= ((Elmos_World)getWorld()).getWidth() || getY() <= 0 || getY() >= ((Elmos_World)getWorld()).getHeight()) {
             ((Elmos_World)getWorld()).removeObject(this);
         }
-        move();
+        else {
+            move();
+        }
         
     }
     public void move() {
-        setLocation(getX()+dx, getY()+dx);
+        int x = ((Elmos_World)getWorld()).me.getX();
+        int y = ((Elmos_World)getWorld()).me.getY();
+        dy = (getY() - y) - ((getY() - y)/8);
+        dx = (getX() - x) - ((getX() - x)/8);
+        setLocation(getX()+dx, getY()+dy);
     }
    
 }

@@ -13,7 +13,7 @@ public class Villain extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public int health = 100;
-    public int timer = 40;
+    public int timer = 27;
     public int fireTimer = 70;
     
     public void act() 
@@ -22,7 +22,7 @@ public class Villain extends Actor
         timer--;
         fireTimer--;
         if (timer <= 0) {
-            timer = 40;
+            timer = 27;
             if (((Elmos_World)getWorld()).me.getX() <= getX()) {
                 setLocation(getX() - 2, getY());
             }
@@ -57,5 +57,6 @@ public class Villain extends Actor
             ((Elmos_World)getWorld()).removeObject(this);
             //write code to call the end of the game
         }
+        ((Elmos_World)getWorld()).showText("Villain Health: " + health, getX(), getY()-50);
     }  
 }

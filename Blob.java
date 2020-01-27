@@ -100,8 +100,12 @@ public class Blob extends Actor
             if(isTouching(Fireball.class)) {
                 health -= 10;
                 checkHealth();
-                fireballTimer = 20;
             }
+            if (isTouching(Villain.class)) {
+                health -= 10;
+                checkHealth();
+            }
+            fireballTimer = 20;
         }
     }
     // public void rearrangeYourselfImmediately1(String direction) {

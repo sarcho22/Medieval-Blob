@@ -94,7 +94,7 @@ public class Elmos_World extends World
                     level4();
                     break;
                 case 5:
-                    level5();
+                    maxLevel();
                     break;
                 
             }
@@ -157,7 +157,7 @@ public class Elmos_World extends World
         addObject(rawr.remove((int)Math.random()*rawr.size()), 467, 423);
     }
     
-    public void level5() {
+    public void maxLevel() {
         addObject(new Villain(), 740, 250);
     }
 }
