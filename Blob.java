@@ -154,8 +154,8 @@ public class Blob extends Actor
     
     public void checkHealth() {
         if(health <= 0) {
-            getWorld().showText("You died. You suck. Try harder lol", 375, 250);
-            Greenfoot.stop();
+            Game_Over e = new Game_Over();
+            Greenfoot.setWorld(e);
         }
     }
     

@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.*;
 
 /**
  * Write a description of class Elmos_World here.
@@ -15,19 +16,18 @@ public class Elmos_World extends World
     public boolean e_pressed = false;
     private int actionTimer = 10;
     public int currentLevel = 0;
-    public int maxLevel = 3;
+    public int maxLevel = 4;
 
     public Elmos_World()
     {    
         super(750, 500, 1);
-        setPaintOrder(Border.class, Sword_Image.class, Pickaxe_Image.class, Key_Image.class);
+        setPaintOrder(Border.class, Sword_Image.class, Pickaxe_Image.class, Key_Image.class, Sword.class, Pickaxe.class, Key.class, Blob.class, Door.class);
         addObject(me, me.getImage().getWidth()/2, getHeight()/2);
         addObject(new Border(), 0, 0);
         addObject(new Border(), 1 * 500, 0);
         addObject(new Border(), 0, getHeight());
         addObject(new Border(), 1 * 500, getHeight());
-        showText("Welcome to Medieval Blob.", 375, 200);
-        showText("Press 'Enter' to begin!", 375, 215);
+        nextLevel();
     }
 
     public void act() {
@@ -44,11 +44,6 @@ public class Elmos_World extends World
         actionTimer--;
         if (currentLevel > 0){
             showText("Health: " + me.health, 690, 25);
-        }
-        if (Greenfoot.isKeyDown("enter") && currentLevel == 0){
-            showText("", 375, 200);
-            showText("", 375, 215);
-            nextLevel();
         }
     }
 
@@ -76,10 +71,14 @@ public class Elmos_World extends World
     }
     
     public void nextLevel() {
-        if(currentLevel > maxLevel) {
+        if(currentLevel >= maxLevel) {
             showText("Great Job! You finished all " + currentLevel + " levels!", 375, 200);
         }
         else{
+            removeObjects(getObjects(Mob_1.class));
+            removeObjects(getObjects(Rock.class));
+            removeObjects(getObjects(therock.class));
+            me.setLocation(me.getImage().getWidth()/2, getHeight()/2);
             showText("Level: " + (currentLevel + 1), 35, 25);
             switch(++currentLevel){
                 case 1:
@@ -90,6 +89,11 @@ public class Elmos_World extends World
                     break;
                 case 3: 
                     level3();
+                    break;
+                case 4:
+                    level4();
+                    break;
+                
             }
         }
     }
@@ -108,7 +112,6 @@ public class Elmos_World extends World
     }
     
     public void level2() {
-        me.setLocation(me.getImage().getWidth()/2, getHeight()/2);
         therock rock = new therock();
         addObject(rock, 400, 250);
         Door door = new Door();
@@ -120,13 +123,12 @@ public class Elmos_World extends World
     }
     
     public void level3() {
-        me.setLocation(me.getImage().getWidth()/2, getHeight()/2);
-        therock rock = new therock();
-        addObject(rock, 400, 250);
-        Rock rock1 = new Rock();
-        addObject(rock1, 375, 125);
-        Rock rock2 = new Rock();
-        addObject(rock2, 500, 179);
+        ArrayList<Actor> rawr = new ArrayList<Actor>(Arrays.asList(new Rock(), new Rock(),new therock()));
+        
+        addObject(rawr.remove((int)Math.random()*rawr.size()), 221, 323);
+        addObject(rawr.remove((int)Math.random()*rawr.size()), 375, 435);
+        addObject(rawr.remove((int)Math.random()*rawr.size()), 633, 179);
+        
         Sword sword = new Sword();
         addObject(sword,543,436);
         Door door = new Door();
@@ -135,5 +137,20 @@ public class Elmos_World extends World
         showText("That's a Mob!", 375, 370);
         showText("Press 'F' while holding sword to defeat it.", 375, 385);
         showText("Good Luck!", 375, 400);
+    }
+    
+    public void level4() {
+        Door door = new Door();
+        addObject(door, 750, 250);
+        int pos = door.getX() - door.getImage().getWidth()/2;
+        
+        ArrayList<Actor> rawr = new ArrayList<Actor>(Arrays.asList(new Rock(), new Rock(), new Rock(), new Rock(), new Rock(), new therock()));
+        
+        addObject(rawr.remove((int)Math.random()*rawr.size()), 560, 38);
+        addObject(rawr.remove((int)Math.random()*rawr.size()), 348, 313);
+        addObject(rawr.remove((int)Math.random()*rawr.size()), 253, 257);
+        addObject(rawr.remove((int)Math.random()*rawr.size()), 692, 363);
+        addObject(rawr.remove((int)Math.random()*rawr.size()), 164, 157);
+        addObject(rawr.remove((int)Math.random()*rawr.size()), 467, 423);
     }
 }
