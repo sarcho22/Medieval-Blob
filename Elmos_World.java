@@ -21,7 +21,7 @@ public class Elmos_World extends World
     public Elmos_World()
     {    
         super(750, 500, 1);
-        setPaintOrder(Border.class, Sword_Image.class, Pickaxe_Image.class, Key_Image.class, Sword.class, Pickaxe.class, Key.class, Blob.class, Door.class);
+        setPaintOrder(Border.class, Sword_Image.class, Pickaxe_Image.class, Key_Image.class, Sword.class, Pickaxe.class, Key.class, Blob.class, Villain.class, Door.class);
         addObject(me, me.getImage().getWidth()/2, getHeight()/2);
         addObject(new Border(), 0, 0);
         addObject(new Border(), 1 * 500, 0);
