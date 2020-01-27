@@ -23,10 +23,11 @@ public class Done extends World
         timer--;
         if(timer <= 0) {
             setBackground(new GreenfootImage("done.png"));
-            showText("lol sorry did u panic? u should've known", 500, 310);
-            showText("tsk tsk, u suck :3", 500, 330);
-            showText("congratz tho", 500, 350);
-            showText("thx for playing", 500, 370);
+            showText("lol sorry did u panic? u should've known", 500, 330);
+            showText("tsk tsk, u suck :3", 500, 360);
+            showText("im half kidding", 500, 380);
+            showText("congratz tho", 500, 410);
+            showText("thx for playing", 500, 430);
             addObject(new Credits(), 375, 480);
         }
     }

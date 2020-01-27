@@ -72,7 +72,8 @@ public class Elmos_World extends World
     
     public void nextLevel() {
         if(currentLevel >= maxLevel) {
-            showText("Great Job! You finished all " + currentLevel + " levels!", 375, 200);
+            Done e = new Done();
+            Greenfoot.setWorld(e);
         }
         else{
             removeObjects(getObjects(Mob_1.class));
@@ -94,9 +95,8 @@ public class Elmos_World extends World
                     level4();
                     break;
                 case 5:
-                    maxLevel();
+                    maxLevelFunc();
                     break;
-                
             }
         }
     }
@@ -161,7 +161,7 @@ public class Elmos_World extends World
         addObject(rawr.remove((int)Math.random()*rawr.size()), 467, 423);
     }
     
-    public void maxLevel() {
+    public void maxLevelFunc() {
         addObject(new Villain(), 740, 250);
     }
 }

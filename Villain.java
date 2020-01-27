@@ -14,7 +14,7 @@ public class Villain extends Actor
      */
     public int health = 100;
     public int timer = 27;
-    public int fireTimer = 70;
+    public int fireTimer = 150;
     
     public void act() 
     {
@@ -51,14 +51,15 @@ public class Villain extends Actor
                 // f.dy = 2;
             // } 
             ((Elmos_World)getWorld()).addObject(f, getX(), getY());
-            fireTimer = 70;
+            f.rawr();
+            fireTimer = 150;
         }
         if (health <= 0) {
+            Key k = new Key();
+            ((Elmos_World)getWorld()).addObject(k, getX(), getY());
             ((Elmos_World)getWorld()).removeObject(this);
-            //write code to call the end of the game
         }
-        ((Elmos_World)getWorld()).showText("Villain Health: " + health, getX(), getY()-50);
-        ((Elmos_World)getWorld()).showText("", getX(), getY()-50);
+        
         
     }  
 }
