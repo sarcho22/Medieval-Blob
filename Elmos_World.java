@@ -16,7 +16,7 @@ public class Elmos_World extends World
     public boolean e_pressed = false;
     private int actionTimer = 10;
     public int currentLevel = 0;
-    public int maxLevel = 4;
+    public int maxLevel = 5;
 
     public Elmos_World()
     {    
@@ -93,6 +93,9 @@ public class Elmos_World extends World
                 case 4:
                     level4();
                     break;
+                case 5:
+                    level5();
+                    break;
                 
             }
         }
@@ -152,5 +155,9 @@ public class Elmos_World extends World
         addObject(rawr.remove((int)Math.random()*rawr.size()), 692, 363);
         addObject(rawr.remove((int)Math.random()*rawr.size()), 164, 157);
         addObject(rawr.remove((int)Math.random()*rawr.size()), 467, 423);
+    }
+    
+    public void level5() {
+        addObject(new Villain(), 740, 250);
     }
 }

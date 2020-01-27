@@ -10,6 +10,7 @@ public class Blob extends Actor
 {
     public int health = 100;
     private int mobTimer = 40;
+    private int fireballTimer = 20;
     public int actionTimer = 10;
     public static Actor i_value1 = null;
     public static Actor i_value2 = null;
@@ -32,6 +33,7 @@ public class Blob extends Actor
         }
         checkMobs();
         mobTimer--;
+        fireballTimer--;
         actionTimer--;
         if(actionTimer <= 0) {
             action();
@@ -93,6 +95,13 @@ public class Blob extends Actor
                 checkHealth();
                 mobTimer = 40;
             }   
+        }
+        if (fireballTimer <= 0) {
+            if(isTouching(Fireball.class)) {
+                health -= 10;
+                checkHealth();
+                fireballTimer = 20;
+            }
         }
     }
     // public void rearrangeYourselfImmediately1(String direction) {
@@ -163,6 +172,10 @@ public class Blob extends Actor
         if (isTouching(Mob_1.class)){
             removeTouching(Mob_1.class);
             health += 5;
+        }
+        if (isTouching(Villain.class)) {
+            Villain v = (Villain)(getOneIntersectingObject(Villain.class));
+            v.health -= 10;
         }
     }
     
