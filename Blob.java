@@ -95,6 +95,11 @@ public class Blob extends Actor
                 checkHealth();
                 mobTimer = 40;
             }   
+            if(isTouching(Mob_2.class)) {
+                health -= 8;
+                checkHealth();
+                mobTimer = 40;
+            }   
         }
         if (fireballTimer <= 0) {
             if(isTouching(Fireball.class)) {
@@ -103,7 +108,7 @@ public class Blob extends Actor
                 removeTouching(Fireball.class);
             }
             if (isTouching(Villain.class)) {
-                health -= 10;
+                health -= 6;
                 checkHealth();
             }
             fireballTimer = 20;
@@ -177,6 +182,10 @@ public class Blob extends Actor
         if (isTouching(Mob_1.class)){
             removeTouching(Mob_1.class);
             health += 5;
+        }
+        if (isTouching(Mob_2.class)){
+            Mob_2 v = (Mob_2)(getOneIntersectingObject(Mob_2.class));
+            v.health -= 5;
         }
         if (isTouching(Villain.class)) {
             Villain v = (Villain)(getOneIntersectingObject(Villain.class));

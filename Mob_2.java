@@ -28,6 +28,9 @@ public class Mob_2 extends Actor
             dy = -dy;
         }
         direct();
+        if(health <= 0) {
+            ((Elmos_World)getWorld()).removeObject(this);
+        }
         
     }    
     public void direct() {
