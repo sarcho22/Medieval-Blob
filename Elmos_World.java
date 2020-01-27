@@ -138,11 +138,15 @@ public class Elmos_World extends World
         addObject(door, 750, 250);
         showText("See a green thing?", 375, 355);
         showText("That's a Mob!", 375, 370);
-        showText("Press 'F' while holding sword to defeat it.", 375, 385);
+        showText("Press 'F' while holding the sword to defeat it.", 375, 385);
         showText("Good Luck!", 375, 400);
     }
     
     public void level4() {
+        showText("", 375, 355);
+        showText("", 375, 370);
+        showText("", 375, 385);
+        showText("", 375, 400);
         Door door = new Door();
         addObject(door, 750, 250);
         int pos = door.getX() - door.getImage().getWidth()/2;

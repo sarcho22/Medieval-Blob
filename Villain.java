@@ -58,7 +58,7 @@ public class Villain extends Actor
             //write code to call the end of the game
         }
         ((Elmos_World)getWorld()).showText("Villain Health: " + health, getX(), getY()-50);
-        ((Elmos_World)getWorld()).showText("", getX(), getY()+50);
+        ((Elmos_World)getWorld()).showText("", getX(), getY()-50);
         
     }  
 }
