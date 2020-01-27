@@ -21,7 +21,7 @@ public class Main_Menu extends World
     public int timer = 4;
     public Main_Menu()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 750x500 cells with a cell size of 1x1 pixels.
         super(750, 500, 1);
         addObject(eelo, 365, 330);
         addObject(yey, 375, 116);
